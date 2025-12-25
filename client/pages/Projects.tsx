@@ -242,7 +242,7 @@ function ProjectCard({ title, image, link }: ProjectCardProps) {
       <div className="relative w-full rounded-[32px] lg:rounded-[42px] overflow-hidden aspect-[807/470] transition-transform hover:scale-[1.02]">
         <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>
-      <div className="flex items-center gap-3 lg:gap-[13px]">
+      <div className="flex items-center gap-3 lg:gap-[13px] group">
         <svg 
           className="w-10 h-10 lg:w-12 lg:h-12 flex-shrink-0 transition-transform group-hover:translate-x-2 group-hover:rotate-45" 
           viewBox="0 0 68 68" 
@@ -254,7 +254,7 @@ function ProjectCard({ title, image, link }: ProjectCardProps) {
             fill="black"
           />
         </svg>
-        <h3 className="text-2xl sm:text-3xl lg:text-[40px] font-normal">{title}</h3>
+        <h3 className="text-2xl sm:text-3xl lg:text-[40px] font-normal transition-transform group-hover:translate-x-2">{title}</h3>
       </div>
     </a>
   );

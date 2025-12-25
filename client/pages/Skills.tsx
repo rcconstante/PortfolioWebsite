@@ -81,7 +81,6 @@ export default function Skills() {
               ]}
               bottomIcons={[
                 <NextIcon key="next" />,
-                <ViteIcon key="vite" />,
                 <ReactIcon key="react" />
               ]}
             />
@@ -92,7 +91,7 @@ export default function Skills() {
               description="Developing robust server-side logic and APIs to power dynamic and scalable web applications."
               icons={[
                 <NodeIcon key="node" />,
-                <ExpressIcon key="express" />,
+                <FlaskIcon key="flask" />,
                 <DjangoIcon key="django" />
               ]}
             />
@@ -106,7 +105,6 @@ export default function Skills() {
                 </div>
                 <div className="flex flex-wrap gap-2.5">
                   <Badge text="Object-Oriented Programming" />
-                  <Badge text="DSA" />
                 </div>
                 <div className="flex flex-wrap gap-2.5">
                   <Badge text="System Design" />
@@ -250,7 +248,6 @@ export default function Skills() {
                 </div>
                 <div className="flex flex-wrap gap-2.5">
                   <Badge text="Communication" />
-                  <Badge text="Leadership" />
                 </div>
               </div>
               <div className="flex flex-col gap-2.5">
@@ -435,6 +432,7 @@ const HtmlIcon = () => <Icon src="/logo/html.png" alt="HTML" />;
 const JsIcon = () => <Icon src="/logo/js.png" alt="JavaScript" />;
 const TsIcon = () => <Icon src="/logo/typescript.png" alt="TypeScript" />;
 const NodeIcon = () => <Icon src="/logo/nodejs.png" alt="Node.js" />;
+const FlaskIcon = () => <Icon src="/logo/flask.png" alt="Flask" />;
 const DjangoIcon = () => <Icon src="/logo/django.png" alt="Django" />;
 const PythonIcon = () => <Icon src="/logo/python.png" alt="Python" />;
 const JavaIcon = () => <Icon src="/logo/java.png" alt="Java" />;
