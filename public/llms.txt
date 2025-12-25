@@ -1,0 +1,35 @@
+# Richmond C. Constante - Portfolio
+
+## About
+Richmond C. Constante is a Creative Developer and Designer specializing in full-stack web development, UI/UX design, and innovative digital solutions.
+
+## Skills
+- Front-End: React, TypeScript, JavaScript, HTML, CSS, Tailwind CSS, Next.js
+- Back-End: Node.js, Python, Django, Flask
+- Mobile: React Native
+- Database: MySQL, PostgreSQL, SQLite
+- Tools: Git, GitHub, Figma
+- Design: UI/UX Design, Prototyping, Wireframing
+
+## Projects
+Portfolio showcasing 16+ innovative projects including:
+- Logo Maker AI (AI-powered logo generation)
+- Ads Maker AI (AI-driven advertisement creation)
+- TagHub CRM (Customer relationship management system)
+- AI Chat WorkSpace (AI-powered chat interface)
+- Computer Vision projects
+- E-commerce solutions
+- Educational platforms
+
+## Contact
+- Email: r.constante.dev@gmail.com
+- Phone: +639150365602
+- GitHub: https://github.com/rcconstante
+
+## Pages
+- Home: / - Main portfolio page with featured work
+- Skills: /skills - Comprehensive skills overview
+- Projects: /projects - Complete project showcase
+
+## Technologies Used
+This portfolio is built with React, TypeScript, Tailwind CSS, and Vite.
