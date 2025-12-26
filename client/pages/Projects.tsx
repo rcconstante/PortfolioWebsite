@@ -43,6 +43,13 @@ export default function Projects() {
             image="/adsmaker.jpg"
             link="https://adsmakerai.netlify.app/"
           />
+          
+          {/* Project 3 - TagHub CRM */}
+          <ProjectCard
+            title="Truth Chain Social"
+            image="/TruthChain.png"
+            link="https://truth-chain-social.netlify.app/"
+          />          
 
           {/* Project 3 - TagHub CRM */}
           <ProjectCard
