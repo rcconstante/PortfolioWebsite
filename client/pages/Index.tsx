@@ -1,8 +1,12 @@
 import { Home, Menu, Box, User, FileText, Github, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import Spline from '@splinetool/react-spline';
+import { useState } from "react";
 
 export default function Index() {
+  const [showGame, setShowGame] = useState(false);
+
   return (
     <div className="w-full bg-white scroll-smooth">
       <ScrollToTopButton />
@@ -251,6 +255,41 @@ export default function Index() {
               </button>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Game Section */}
+      <section className="w-full px-4 md:px-8 lg:px-[133px] py-12 md:py-16 lg:py-[66px] bg-white">
+        <div className="flex flex-col gap-8 md:gap-12">
+          {/* Game Header */}
+          <div className="max-w-[810px]">
+            <h2 className="font-inter font-normal text-[clamp(2rem,6vw,4.8rem)] leading-tight text-black">
+              Wanna Play a Game?
+            </h2>
+          </div>
+
+          {/* Game Container */}
+          {!showGame ? (
+            <div className="relative w-full h-[500px] rounded-3xl overflow-hidden">
+              <img
+                src="/Gamepreview.png"
+                alt="Game preview"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/40 backdrop-blur-sm rounded-3xl flex items-center justify-center">
+                <button
+                  onClick={() => setShowGame(true)}
+                  className="px-12 py-6 bg-black text-white rounded-full text-2xl font-inter font-medium hover:bg-gray-800 transition-all hover:scale-105 shadow-lg"
+                >
+                  Start
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="w-full h-[500px] rounded-3xl overflow-hidden">
+              <Spline scene="https://prod.spline.design/fZeBTGpjsEchg7PI/scene.splinecode" />
+            </div>
+          )}
         </div>
       </section>
 
