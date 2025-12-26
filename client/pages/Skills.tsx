@@ -12,7 +12,7 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export default function Skills() {
   return (
-    <div className="w-full bg-black scroll-smooth">
+    <div className="w-full bg-black scroll-smooth overflow-x-hidden">
       <ScrollToTopButton />
       {/* Header Section */}
       <section className="w-full bg-black px-4 md:px-8 lg:px-[133px] py-12 md:py-16 lg:py-[66px]">
@@ -65,7 +65,7 @@ export default function Skills() {
 
       {/* Skills Grid Section */}
       <section className="w-full px-4 md:px-8 lg:px-[133px] py-12 md:py-16 bg-black">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 max-w-[1654px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 w-full mx-auto">
           
           {/* LEFT COLUMN */}
           <div className="flex flex-col gap-5">
