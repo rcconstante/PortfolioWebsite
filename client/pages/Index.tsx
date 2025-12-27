@@ -3,13 +3,35 @@ import { Link } from "react-router-dom";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Spline from '@splinetool/react-spline';
 import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 export default function Index() {
   const [showGame, setShowGame] = useState(false);
+  const [showDevDialog, setShowDevDialog] = useState(false);
 
   return (
     <div className="w-full bg-white scroll-smooth">
       <ScrollToTopButton />
+      
+      {/* In Development Dialog */}
+      <Dialog open={showDevDialog} onOpenChange={setShowDevDialog}>
+        <DialogContent className="bg-white">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-medium">In Development</DialogTitle>
+            <DialogDescription className="text-lg pt-4">
+              This project is currently in development mode and not available for viewing at the moment.
+              Please check back soon!
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+
       {/* Hero Section */}
       <section className="relative w-full h-screen max-h-[972px] flex flex-col items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -32,19 +54,19 @@ export default function Index() {
         </div>
 
         {/* Hero Content Overlay */}
-        <div className="relative z-10 text-center px-4 w-full overflow-hidden">
+        <div className="relative z-10 text-center px-4 w-full overflow-hidden pb-4">
           <div className="inline-flex animate-[scroll_15s_linear_infinite] whitespace-nowrap">
-            <h1 className="font-dm-sans font-medium text-white leading-none inline-block px-8">
+            <h1 className="font-dm-sans font-medium text-white inline-block px-8" style={{ lineHeight: '1.2' }}>
               <span className="text-[clamp(3rem,12vw,15rem)]">
                 Creative Developer & Designer
               </span>
             </h1>
-            <h1 className="font-dm-sans font-medium text-white leading-none inline-block px-8">
+            <h1 className="font-dm-sans font-medium text-white inline-block px-8" style={{ lineHeight: '1.2' }}>
               <span className="text-[clamp(3rem,12vw,15rem)]">
                 Creative Developer & Designer
               </span>
             </h1>
-            <h1 className="font-dm-sans font-medium text-white leading-none inline-block px-8">
+            <h1 className="font-dm-sans font-medium text-white inline-block px-8" style={{ lineHeight: '1.2' }}>
               <span className="text-[clamp(3rem,12vw,15rem)]">
                 Creative Developer & Designer
               </span>
@@ -52,28 +74,28 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Floating Navigation Bar */}
-        <div className="absolute bottom-24 z-20 flex items-center gap-3 px-5 py-2.5 bg-portfolio-gray-darkest rounded-[18px]">
-          <button className="w-12 h-12 rounded-full bg-portfolio-gray-light flex items-center justify-center transition-all hover:scale-110">
-            <Home className="w-6 h-6 text-white" />
+        {/* Floating Navigation Bar - Sticky */}
+        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2 sm:py-2.5 bg-portfolio-gray-darkest rounded-[18px] shadow-lg">
+          <button className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-light flex items-center justify-center transition-all hover:scale-110">
+            <Home className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
           </button>
-          <a href="#impressive-works" className="w-12 h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
-            <Menu className="w-6 h-6 text-white" />
+          <a href="#impressive-works" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+            <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
           </a>
-          <Link to="/projects" className="w-12 h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
-            <Box className="w-6 h-6 text-white" />
+          <Link to="/projects" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+            <Box className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
           </Link>
-          <Link to="/skills" className="w-12 h-12 rounded-full overflow-hidden transition-all hover:scale-110 bg-portfolio-gray-darker flex items-center justify-center">
-            <User className="w-6 h-6 text-white" />
+          <Link to="/skills" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden transition-all hover:scale-110 bg-portfolio-gray-darker flex items-center justify-center">
+            <User className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
           </Link>
-          <a href="/RichmondC.pdf" download className="w-12 h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
-            <FileText className="w-6 h-6 text-white" />
+          <a href="/RichmondC.pdf" download className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+            <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
           </a>
-          <a href="https://github.com/rcconstante" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
-            <Github className="w-6 h-6 text-white" />
+          <a href="https://github.com/rcconstante" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+            <Github className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
           </a>
-          <button onClick={() => navigator.share?.({ url: window.location.href, title: document.title })} className="w-12 h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
-            <ExternalLink className="w-6 h-6 text-white" />
+          <button onClick={() => navigator.share?.({ url: window.location.href, title: document.title })} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+            <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
           </button>
         </div>
       </section>
@@ -168,9 +190,11 @@ export default function Index() {
                 <img src="/adsmaker.jpg" alt="Ads Maker AI" className="w-full h-full object-cover" />
               </div>
               <a
-                href="https://adsmakerai.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowDevDialog(true);
+                }}
                 className="flex items-center gap-3 group transition-transform hover:translate-x-2"
               >
                 <svg
@@ -222,9 +246,11 @@ export default function Index() {
                 <img src="/Ai.jpg" alt="AI Chat WorkSpace" className="w-full h-full object-cover" />
               </div>
               <a
-                href="https://tgptproject.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowDevDialog(true);
+                }}
                 className="flex items-center gap-3 group transition-transform hover:translate-x-2"
               >
                 <svg

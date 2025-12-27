@@ -1,18 +1,45 @@
 import { Link } from "react-router-dom";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 export default function Projects() {
+  const [showDevDialog, setShowDevDialog] = useState(false);
+
   return (
     <div className="bg-white min-h-screen">
       <ScrollToTopButton />
+      
+      {/* In Development Dialog */}
+      <Dialog open={showDevDialog} onOpenChange={setShowDevDialog}>
+        <DialogContent className="bg-white">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-medium">In Development</DialogTitle>
+            <DialogDescription className="text-lg pt-4">
+              This project is currently in development mode and not available for viewing at the moment.
+              Please check back soon!
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+
       {/* Header Section */}
       <header className="px-4 sm:px-8 lg:px-[133px] pt-8 lg:pt-12">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <div className="flex items-center gap-4">
-            <Link to="/" className="text-lg sm:text-xl font-medium hover:underline">
-              ← Back to Home
-            </Link>
-          </div>
+          <Link to="/">
+            <button className="flex items-center gap-3 px-6 py-2.5 rounded-[37px] border border-[#AEAEAE] transition-all hover:bg-black hover:text-white group">
+              <div className="w-2.5 h-2.5 rounded-full bg-black group-hover:bg-white transition-colors"></div>
+              <span className="font-inter font-normal text-base sm:text-lg text-black group-hover:text-white transition-colors">
+                Back to Home
+              </span>
+            </button>
+          </Link>
           <div className="text-lg sm:text-xl font-medium">Code by Richhh</div>
           <div className="text-base sm:text-lg lg:text-xl font-light max-w-[600px] text-right">
             Passionate Creative Designer and Developer, dedicated to crafting innovative solutions and exceptional digital experiences through modern technologies
@@ -41,7 +68,11 @@ export default function Projects() {
           <ProjectCard
             title="Ads Maker AI"
             image="/adsmaker.jpg"
-            link="https://adsmakerai.netlify.app/"
+            link="#"
+            onClick={(e) => {
+              e.preventDefault();
+              setShowDevDialog(true);
+            }}
           />
           
           {/* Project 3 - TagHub CRM */}
@@ -62,7 +93,11 @@ export default function Projects() {
           <ProjectCard
             title="AI Chat WorkSpace"
             image="/Ai.jpg"
-            link="https://tgptproject.netlify.app/"
+            link="#"
+            onClick={(e) => {
+              e.preventDefault();
+              setShowDevDialog(true);
+            }}
           />
 
           {/* Project 5 - Computer Vision */}
@@ -241,11 +276,18 @@ interface ProjectCardProps {
   title: string;
   image: string;
   link: string;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
-function ProjectCard({ title, image, link }: ProjectCardProps) {
+function ProjectCard({ title, image, link, onClick }: ProjectCardProps) {
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer" className="flex flex-col gap-6 lg:gap-7 group cursor-pointer">
+    <a 
+      href={link} 
+      target={link === "#" ? undefined : "_blank"} 
+      rel={link === "#" ? undefined : "noopener noreferrer"} 
+      onClick={onClick}
+      className="flex flex-col gap-6 lg:gap-7 group cursor-pointer"
+    >
       <div className="relative w-full rounded-[32px] lg:rounded-[42px] overflow-hidden aspect-[807/470] transition-transform hover:scale-[1.02]">
         <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>
