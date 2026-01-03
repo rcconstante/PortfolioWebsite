@@ -128,7 +128,7 @@ const projectsData = [
     demoLink: null,
     repoLink: "https://github.com/rcconstante/StudySpaceThesis",
     description: "A thesis project focusing on creating an intelligent study environment with productivity tracking and adaptive learning recommendations.",
-    technologies: ["React", "Python", "Machine Learning", "PostgreSQL"],
+    technologies: ["React Native", "Tailwind", "Machine Learning", "SQLite"],
     status: "live"
   },
   {
@@ -180,16 +180,6 @@ const projectsData = [
     description: "An environmental sustainability platform tracking carbon footprint and providing eco-friendly lifestyle recommendations.",
     technologies: ["React", "Node.js", "Data Visualization", "TailwindCSS"],
     status: "live"
-  },
-  {
-    id: 17,
-    title: "MU Dark Epoch",
-    image: "/RacerPH.png",
-    demoLink: null,
-    repoLink: "https://github.com/rcconstante/MU-Dark-Epoch",
-    description: "A dark fantasy RPG game inspired by MU Online. Features immersive gameplay, character progression, and epic battles.",
-    technologies: ["Unity", "C#", "Game Development", "3D Graphics"],
-    status: "development"
   }
 ];
 

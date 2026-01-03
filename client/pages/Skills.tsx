@@ -634,6 +634,10 @@ function TimelineSection() {
             </div>
             <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
               <Code className="w-4 h-4 text-purple-400" />
+              <span>Developed Smart Classroom IoT System (Thesis)</span>
+            </div>
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <Code className="w-4 h-4 text-purple-400" />
               <span>Created Automata Visualizer Tools</span>
             </div>
           </div>
@@ -680,10 +684,6 @@ function TimelineSection() {
             Built major projects and learned Machine Learning
           </p>
           <div className="mb-8">
-            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
-              <Code className="w-4 h-4 text-purple-400" />
-              <span>Developed Smart Classroom IoT System (Thesis)</span>
-            </div>
             <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
               <Code className="w-4 h-4 text-purple-400" />
               <span>Built SmartWater IoT Project</span>
