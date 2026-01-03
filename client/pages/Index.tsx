@@ -1,4 +1,4 @@
-import { Home, Menu, Box, User, FileText, Github, ExternalLink } from "lucide-react";
+import { Home, Menu, Box, User, FileText, Github, ExternalLink, Lock, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Spline from '@splinetool/react-spline';
@@ -6,29 +6,161 @@ import { useState } from "react";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
 
+// Project data for homepage
+const homeProjects = [
+  {
+    id: 1,
+    title: "Logo Maker AI",
+    image: "/logomaker.jpg",
+    demoLink: "https://logomaker-ai.com/",
+    repoLink: null,
+    description: "An AI-powered logo generation platform that creates professional, unique logos in seconds. Built with advanced machine learning models for creative design automation.",
+    technologies: ["React", "TypeScript", "Python", "TensorFlow", "Node.js"],
+    status: "live"
+  },
+  {
+    id: 2,
+    title: "Ads Maker AI",
+    image: "/adsmaker.jpg",
+    demoLink: null,
+    repoLink: null,
+    description: "A sophisticated AI tool for creating compelling advertisement content automatically. Utilizes generative AI to produce marketing materials tailored to brand guidelines.",
+    technologies: ["React", "Python", "OpenAI", "Node.js", "PostgreSQL"],
+    status: "development"
+  },
+  {
+    id: 3,
+    title: "TagHub CRM",
+    image: "/taghub.jpg",
+    demoLink: "https://taghub-app.netlify.app/",
+    repoLink: null,
+    description: "A comprehensive CRM solution with advanced tagging system for contact management. Features customer journey visualization and analytics dashboards.",
+    technologies: ["React", "TypeScript", "Convex", "TailwindCSS"],
+    status: "live"
+  },
+  {
+    id: 4,
+    title: "AI Chat WorkSpace",
+    image: "/Ai.jpg",
+    demoLink: null,
+    repoLink: null,
+    description: "A collaborative AI-powered workspace that enables teams to interact with AI assistants for enhanced productivity and project management.",
+    technologies: ["React", "TypeScript", "OpenAI", "WebSockets", "Node.js"],
+    status: "development"
+  }
+];
+
 export default function Index() {
   const [showGame, setShowGame] = useState(false);
-  const [showDevDialog, setShowDevDialog] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<typeof homeProjects[0] | null>(null);
 
   return (
     <div className="w-full bg-white scroll-smooth">
       <ScrollToTopButton />
-      
-      {/* In Development Dialog */}
-      <Dialog open={showDevDialog} onOpenChange={setShowDevDialog}>
-        <DialogContent className="bg-white">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-medium">In Development</DialogTitle>
-            <DialogDescription className="text-lg pt-4">
-              This project is currently in development mode and not available for viewing at the moment.
-              Please check back soon!
-            </DialogDescription>
-          </DialogHeader>
+
+      {/* Project Detail Modal */}
+      <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
+        <DialogContent className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border-none max-w-4xl max-h-[90vh] overflow-y-auto p-0 !rounded-[40px] shadow-2xl">
+          {selectedProject && (
+            <>
+              {/* Modal Header Image */}
+              <div className="relative w-full aspect-video rounded-t-[40px] overflow-hidden">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/95 via-gray-900/30 to-transparent" />
+
+                {/* Status Badge */}
+                <div className="absolute top-6 left-6">
+                  {selectedProject.status === "development" ? (
+                    <span className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/20 backdrop-blur-md border border-amber-500/30 rounded-full text-amber-400 text-sm font-medium">
+                      <Clock className="w-4 h-4" />
+                      In Development
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 backdrop-blur-md border border-emerald-500/30 rounded-full text-emerald-400 text-sm font-medium">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      Live
+                    </span>
+                  )}
+                </div>
+
+                {/* Title Overlay */}
+                <div className="absolute bottom-6 left-8 right-8">
+                  <DialogHeader>
+                    <DialogTitle className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+                      {selectedProject.title}
+                    </DialogTitle>
+                  </DialogHeader>
+                </div>
+              </div>
+
+              {/* Modal Body */}
+              <div className="p-8 space-y-6">
+                {/* Description */}
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  {selectedProject.description}
+                </p>
+
+                {/* Technologies */}
+                <div>
+                  <h4 className="text-white text-sm font-medium mb-3 uppercase tracking-wider">Technologies</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.technologies.map((tech, i) => (
+                      <span key={i} className="px-3 py-1.5 bg-white/10 rounded-full text-gray-300 text-sm">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex flex-wrap gap-4 pt-4">
+                  {/* Live Demo Button */}
+                  {selectedProject.demoLink ? (
+                    <a
+                      href={selectedProject.demoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transition-colors"
+                    >
+                      <ExternalLink className="w-5 h-5" />
+                      View Live
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-gray-400 rounded-full font-medium cursor-not-allowed">
+                      <Clock className="w-5 h-5" />
+                      In Development
+                    </span>
+                  )}
+
+                  {/* Repository Button */}
+                  {selectedProject.repoLink ? (
+                    <a
+                      href={selectedProject.repoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white rounded-full font-medium hover:bg-white/20 transition-colors"
+                    >
+                      <Github className="w-5 h-5" />
+                      View Repository
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 text-gray-500 rounded-full font-medium cursor-not-allowed">
+                      <Lock className="w-5 h-5" />
+                      Private Repository
+                    </span>
+                  )}
+                </div>
+              </div>
+            </>
+          )}
         </DialogContent>
       </Dialog>
 
@@ -162,10 +294,8 @@ export default function Index() {
               <div className="w-full h-auto rounded-[42px] overflow-hidden aspect-[807/470]">
                 <img src="/logomaker.jpg" alt="Logo Maker AI" className="w-full h-full object-cover" />
               </div>
-              <a
-                href="https://logomaker-ai.com/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => setSelectedProject(homeProjects[0])}
                 className="flex items-center gap-3 group transition-transform hover:translate-x-2"
               >
                 <svg
@@ -181,7 +311,7 @@ export default function Index() {
                 <span className="font-inter font-normal text-[clamp(1.5rem,3vw,2.5rem)] text-black">
                   Logo Maker AI
                 </span>
-              </a>
+              </button>
             </div>
 
             {/* Project 2 - Ads Maker AI */}
@@ -189,12 +319,8 @@ export default function Index() {
               <div className="w-full h-auto rounded-[42px] overflow-hidden aspect-[807/470]">
                 <img src="/adsmaker.jpg" alt="Ads Maker AI" className="w-full h-full object-cover" />
               </div>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setShowDevDialog(true);
-                }}
+              <button
+                onClick={() => setSelectedProject(homeProjects[1])}
                 className="flex items-center gap-3 group transition-transform hover:translate-x-2"
               >
                 <svg
@@ -210,7 +336,7 @@ export default function Index() {
                 <span className="font-inter font-normal text-[clamp(1.5rem,3vw,2.5rem)] text-black">
                   Ads Maker AI
                 </span>
-              </a>
+              </button>
             </div>
 
             {/* Project 3 - TagHub CRM */}
@@ -218,10 +344,8 @@ export default function Index() {
               <div className="w-full h-auto rounded-[42px] overflow-hidden aspect-[807/470]">
                 <img src="/taghub.jpg" alt="TagHub CRM" className="w-full h-full object-cover" />
               </div>
-              <a
-                href="https://taghub-app.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => setSelectedProject(homeProjects[2])}
                 className="flex items-center gap-3 group transition-transform hover:translate-x-2"
               >
                 <svg
@@ -237,7 +361,7 @@ export default function Index() {
                 <span className="font-inter font-normal text-[clamp(1.5rem,3vw,2.5rem)] text-black">
                   TagHub CRM
                 </span>
-              </a>
+              </button>
             </div>
 
             {/* Project 4 - AI Chat WorkSpace */}
@@ -245,12 +369,8 @@ export default function Index() {
               <div className="w-full h-auto rounded-[42px] overflow-hidden aspect-[807/470]">
                 <img src="/Ai.jpg" alt="AI Chat WorkSpace" className="w-full h-full object-cover" />
               </div>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setShowDevDialog(true);
-                }}
+              <button
+                onClick={() => setSelectedProject(homeProjects[3])}
                 className="flex items-center gap-3 group transition-transform hover:translate-x-2"
               >
                 <svg
@@ -266,7 +386,7 @@ export default function Index() {
                 <span className="font-inter font-normal text-[clamp(1.5rem,3vw,2.5rem)] text-black">
                   AI Chat WorkSpace
                 </span>
-              </a>
+              </button>
             </div>
           </div>
 
@@ -274,10 +394,10 @@ export default function Index() {
           <div className="flex justify-center w-full">
             <Link to="/projects">
               <button className="flex items-center gap-3 px-8 md:px-[34px] py-3 md:py-[13px] rounded-[37px] border border-[#AEAEAE] transition-all hover:bg-black hover:text-white group">
-              <div className="w-2.5 h-2.5 rounded-full bg-black group-hover:bg-white transition-colors"></div>
-              <span className="font-inter font-normal text-lg md:text-xl text-black group-hover:text-white transition-colors">
-                Explore more
-              </span>
+                <div className="w-2.5 h-2.5 rounded-full bg-black group-hover:bg-white transition-colors"></div>
+                <span className="font-inter font-normal text-lg md:text-xl text-black group-hover:text-white transition-colors">
+                  Explore more
+                </span>
               </button>
             </Link>
           </div>
@@ -296,7 +416,7 @@ export default function Index() {
 
           {/* Game Container */}
           {!showGame ? (
-            <div className="relative w-full h-[500px] rounded-3xl overflow-hidden">
+            <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-3xl overflow-hidden">
               <img
                 src="/Gamepreview.png"
                 alt="Game preview"
@@ -305,17 +425,68 @@ export default function Index() {
               <div className="absolute inset-0 bg-black/40 backdrop-blur-sm rounded-3xl flex items-center justify-center">
                 <button
                   onClick={() => setShowGame(true)}
-                  className="px-12 py-6 bg-black text-white rounded-full text-2xl font-inter font-medium hover:bg-gray-800 transition-all hover:scale-105 shadow-lg"
+                  className="px-8 py-4 sm:px-12 sm:py-6 bg-black text-white rounded-full text-xl sm:text-2xl font-inter font-medium hover:bg-gray-800 transition-all hover:scale-105 shadow-lg"
                 >
                   Start
                 </button>
               </div>
             </div>
           ) : (
-            <div className="w-full h-[500px] rounded-3xl overflow-hidden">
-              <Spline scene="https://prod.spline.design/fZeBTGpjsEchg7PI/scene.splinecode" />
+            <div className="flex flex-col gap-4">
+              <div className="w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-3xl overflow-hidden">
+                <Spline scene="https://prod.spline.design/fZeBTGpjsEchg7PI/scene.splinecode" />
+              </div>
+              {/* Mobile Controls Hint */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 py-4 px-6 bg-gray-100 rounded-2xl">
+                <p className="text-gray-600 text-sm sm:text-base text-center">
+                  <span className="font-medium">Controls:</span> Use arrow keys or WASD to move. On mobile, use touch gestures to interact.
+                </p>
+                <button
+                  onClick={() => setShowGame(false)}
+                  className="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-full text-sm font-medium transition-colors"
+                >
+                  Reset Game
+                </button>
+              </div>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Buy Me Coffee Section */}
+      <section className="w-full px-4 md:px-8 lg:px-[133px] py-16 md:py-24 lg:py-[100px] bg-white">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20">
+          {/* Text Content */}
+          <div className="flex-1 max-w-2xl">
+            <p className="font-ibm-mono font-normal text-base md:text-lg text-gray-500 mb-4">
+              Love what you see?
+            </p>
+            <h2 className="font-inter font-medium text-4xl md:text-5xl lg:text-6xl leading-tight text-black mb-6">
+              Buy Me a Coffee
+            </h2>
+            <p className="font-dm-sans font-light text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+              If you enjoy my work and want to support my creative journey, consider buying me a coffee! Your support helps me continue building awesome projects and learning new technologies.
+            </p>
+            <a
+              href="https://buymeacoffee.com/rcconstante"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white rounded-full text-lg md:text-xl font-medium hover:bg-gray-800 transition-all hover:scale-105"
+            >
+              Buy me a coffee
+            </a>
+          </div>
+
+          {/* Coffee Image */}
+          <div className="flex-shrink-0">
+            <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 relative">
+              <img
+                src="/coffee.png"
+                alt="Buy me a coffee"
+                className="w-full h-full object-contain hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

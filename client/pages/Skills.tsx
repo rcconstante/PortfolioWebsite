@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import {
   Home,
   Menu,
@@ -9,15 +10,42 @@ import {
   ExternalLink,
 } from "lucide-react";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import { Timeline } from "@/components/ui/timeline";
+import { Briefcase, GraduationCap, Rocket, Code } from "lucide-react";
 
 export default function Skills() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="w-full bg-black scroll-smooth overflow-x-hidden">
+    <div className="w-full bg-black scroll-smooth" style={{ overflowX: 'clip' }}>
       <ScrollToTopButton />
-      {/* Header Section */}
-      <section className="w-full bg-black px-4 md:px-8 lg:px-[133px] py-12 md:py-16 lg:py-[66px]">
+      {/* Header Section with Video Background */}
+      <section className="w-full bg-black px-4 md:px-8 lg:px-[133px] py-12 md:py-16 lg:py-[66px] relative overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-40"
+          >
+            <source src="/0103.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
+        </div>
+
         {/* Top Info Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12 md:mb-16 lg:mb-[70px]">
+        <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12 md:mb-16 lg:mb-[70px]">
           <div className="text-white font-dm-sans text-base md:text-xl font-medium">
             Code by Richhh
           </div>
@@ -29,47 +57,78 @@ export default function Skills() {
         </div>
 
         {/* Main Header */}
-        <div className="flex flex-col items-center justify-center gap-12 md:gap-[60px] py-12 md:py-0 md:min-h-[400px]">
-          <h1 className="text-white text-center font-dm-sans text-[clamp(3rem,10vw,8.75rem)] font-normal leading-normal max-w-[1212px]">
+        <div className="relative z-10 flex flex-col items-center justify-center gap-12 md:gap-[60px] py-12 md:py-0 md:min-h-[400px]">
+          <h1 className="text-white text-center font-dm-sans text-[clamp(3rem,10vw,8.75rem)] font-normal leading-normal max-w-[1212px] drop-shadow-2xl">
             Skills that fuel my passion
           </h1>
 
-          {/* Floating Navigation Bar */}
-          <div className="flex items-center gap-3 px-5 py-2.5 bg-portfolio-gray-darkest rounded-[18px]">
-            <Link to="/">
-              <button className="w-12 h-12 rounded-full bg-portfolio-gray-light flex items-center justify-center transition-all hover:scale-110">
-                <Home className="w-6 h-6 text-white" />
+          {/* Navigation Bar - inside hero, will become fixed on scroll */}
+          {!isScrolled && (
+            <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2 sm:py-2.5 bg-portfolio-gray-darkest/90 backdrop-blur-md rounded-[18px] shadow-lg">
+              <Link to="/">
+                <button className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+                  <Home className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                </button>
+              </Link>
+              <a href="/#impressive-works" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+                <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+              </a>
+              <Link to="/projects" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+                <Box className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+              </Link>
+              <button className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden transition-all hover:scale-110 bg-blue-600 flex items-center justify-center">
+                <User className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </button>
-            </Link>
-            <a href="/#impressive-works" className="w-12 h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
-              <Menu className="w-6 h-6 text-white" />
-            </a>
-            <Link to="/projects" className="w-12 h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
-              <Box className="w-6 h-6 text-white" />
-            </Link>
-            <button className="w-12 h-12 rounded-full overflow-hidden transition-all hover:scale-110 bg-blue-600 flex items-center justify-center">
-              <User className="w-6 h-6 text-white" />
-            </button>
-            <a href="/RichmondC.pdf" download className="w-12 h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
-              <FileText className="w-6 h-6 text-white" />
-            </a>
-            <a href="https://github.com/rcconstante" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
-              <Github className="w-6 h-6 text-white" />
-            </a>
-            <button onClick={() => navigator.share?.({ url: window.location.href, title: document.title })} className="w-12 h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
-              <ExternalLink className="w-6 h-6 text-white" />
-            </button>
-          </div>
+              <a href="/RichmondC.pdf" download className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+                <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+              </a>
+              <a href="https://github.com/rcconstante" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+                <Github className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+              </a>
+              <button onClick={() => navigator.share?.({ url: window.location.href, title: document.title })} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+                <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+              </button>
+            </div>
+          )}
         </div>
       </section>
+
+      {/* Fixed Floating Navigation Bar - appears after scrolling */}
+      {isScrolled && (
+        <div className="fixed bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2 sm:py-2.5 bg-portfolio-gray-darkest/95 backdrop-blur-md rounded-[18px] shadow-lg animate-in slide-in-from-bottom-4 duration-300">
+          <Link to="/">
+            <button className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+              <Home className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+            </button>
+          </Link>
+          <a href="/#impressive-works" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+            <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+          </a>
+          <Link to="/projects" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+            <Box className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+          </Link>
+          <button className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden transition-all hover:scale-110 bg-blue-600 flex items-center justify-center">
+            <User className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+          </button>
+          <a href="/RichmondC.pdf" download className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+            <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+          </a>
+          <a href="https://github.com/rcconstante" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+            <Github className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+          </a>
+          <button onClick={() => navigator.share?.({ url: window.location.href, title: document.title })} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-portfolio-gray-darker flex items-center justify-center transition-all hover:scale-110">
+            <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+          </button>
+        </div>
+      )}
 
       {/* Skills Grid Section */}
       <section className="w-full px-4 md:px-8 lg:px-[133px] py-12 md:py-16 bg-black">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 w-full mx-auto">
-          
+
           {/* LEFT COLUMN */}
           <div className="flex flex-col gap-5">
-            
+
             {/* Front-End Development */}
             <SkillCard
               title="Front-End Development"
@@ -93,6 +152,9 @@ export default function Skills() {
                 <NodeIcon key="node" />,
                 <FlaskIcon key="flask" />,
                 <DjangoIcon key="django" />
+              ]}
+              bottomIcons={[
+                <StreamlitIcon key="streamlit" />
               ]}
             />
 
@@ -123,7 +185,7 @@ export default function Skills() {
 
           {/* MIDDLE COLUMN */}
           <div className="flex flex-col gap-5">
-            
+
             {/* Programming Languages */}
             <div className="bg-[#1E1E1E] rounded-[32px] p-10 flex flex-col gap-8">
               <div className="flex items-start gap-8">
@@ -161,13 +223,49 @@ export default function Skills() {
                 <IconContainer>
                   <img src="/logo/react-native.svg" alt="React Native" className="w-[66px] h-[66px] object-contain" />
                 </IconContainer>
+                <IconContainer>
+                  <FlutterIcon />
+                </IconContainer>
+                <IconContainer>
+                  <KotlinIcon />
+                </IconContainer>
               </div>
               <div className="flex flex-col gap-2.5">
                 <h2 className="text-white text-[28px] font-medium leading-normal">
                   Mobile App Development
                 </h2>
                 <p className="text-[#AAA] text-xl font-light leading-normal">
-                  Creating cross-platform mobile apps with sleek designs and robust functionality.
+                  Creating cross-platform mobile apps with sleek designs and robust functionality using React Native, Flutter, and Kotlin.
+                </p>
+              </div>
+            </div>
+
+            {/* Machine Learning */}
+            <div className="bg-[#1E1E1E] rounded-[32px] p-10 flex flex-col gap-10">
+              <div className="flex flex-col gap-8">
+                <div className="flex items-start gap-8">
+                  <IconContainer>
+                    <TensorFlowIcon />
+                  </IconContainer>
+                  <IconContainer>
+                    <NumPyIcon />
+                  </IconContainer>
+                </div>
+                <div className="flex justify-end items-center gap-8">
+                  <IconContainer>
+                    <PandasIcon />
+                  </IconContainer>
+                  <IconContainer>
+                    <MatplotlibIcon />
+                  </IconContainer>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2.5">
+                <h2 className="text-white text-[28px] font-medium leading-normal">
+                  Machine Learning
+                </h2>
+                <p className="text-[#AAA] text-xl font-light leading-normal">
+                  Building intelligent models and data pipelines using TensorFlow, NumPy, Pandas, and Matplotlib for predictive analysis and visualization.
                 </p>
               </div>
             </div>
@@ -175,7 +273,7 @@ export default function Skills() {
 
           {/* RIGHT COLUMN */}
           <div className="flex flex-col gap-5">
-            
+
             {/* Styling & Design */}
             <div className="bg-[#1E1E1E] rounded-[32px] p-10 flex flex-col gap-10">
               <div className="flex flex-col gap-8">
@@ -262,6 +360,9 @@ export default function Skills() {
           </div>
         </div>
       </section>
+
+      {/* Journey Timeline Section */}
+      <TimelineSection />
 
       {/* Contact Section */}
       <section className="w-full px-4 md:px-8 lg:px-[133px] py-12 md:py-16 lg:py-[66px] bg-black">
@@ -359,49 +460,49 @@ export default function Skills() {
           </div>
         </div>
       </footer>
-    </div>
+    </div >
   );
 }
 
 // Reusable Components
-function SkillCard({ 
-  title, 
-  description, 
-  icons, 
-  bottomIcons 
-}: { 
-  title: string; 
-  description: string; 
+function SkillCard({
+  title,
+  description,
+  icons,
+  bottomIcons
+}: {
+  title: string;
+  description: string;
   icons: React.ReactNode[];
   bottomIcons?: React.ReactNode[];
 }) {
   return (
-    <div className="bg-[#1E1E1E] rounded-[32px] p-10 flex flex-col gap-8">
-      <div className="flex flex-col gap-8">
+    <div className="bg-[#1E1E1E] rounded-[24px] sm:rounded-[32px] p-6 sm:p-8 lg:p-10 flex flex-col gap-6 sm:gap-8">
+      <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8">
         {bottomIcons ? (
           <>
-            <div className="flex items-start gap-8">
+            <div className="flex flex-wrap items-start gap-3 sm:gap-5 lg:gap-8">
               {icons.map((icon, i) => (
                 <IconContainer key={i}>{icon}</IconContainer>
               ))}
             </div>
-            <div className="flex justify-end items-center gap-8">
+            <div className="flex flex-wrap justify-end items-center gap-3 sm:gap-5 lg:gap-8">
               {bottomIcons.map((icon, i) => (
                 <IconContainer key={i}>{icon}</IconContainer>
               ))}
             </div>
           </>
         ) : (
-          <div className="flex justify-center items-center gap-8">
+          <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-5 lg:gap-8">
             {icons.map((icon, i) => (
               <IconContainer key={i}>{icon}</IconContainer>
             ))}
           </div>
         )}
       </div>
-      <div className="flex flex-col gap-2.5">
-        <h2 className="text-white text-[28px] font-medium leading-normal">{title}</h2>
-        <p className="text-[#AAA] text-xl font-light leading-normal">{description}</p>
+      <div className="flex flex-col gap-2">
+        <h2 className="text-white text-xl sm:text-2xl lg:text-[28px] font-medium leading-normal">{title}</h2>
+        <p className="text-[#AAA] text-base sm:text-lg lg:text-xl font-light leading-normal">{description}</p>
       </div>
     </div>
   );
@@ -409,7 +510,7 @@ function SkillCard({
 
 function IconContainer({ children }: { children: React.ReactNode }) {
   return (
-    <div className="w-[100px] h-[100px] rounded-full bg-[#141414] flex items-center justify-center flex-shrink-0">
+    <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-[100px] lg:h-[100px] rounded-full bg-[#141414] flex items-center justify-center flex-shrink-0 overflow-hidden">
       {children}
     </div>
   );
@@ -417,15 +518,15 @@ function IconContainer({ children }: { children: React.ReactNode }) {
 
 function Badge({ text }: { text: string }) {
   return (
-    <div className="rounded-full bg-[#141414] px-6 py-3 flex items-center justify-center">
-      <span className="text-white text-xl font-light leading-normal">{text}</span>
+    <div className="rounded-full bg-[#141414] px-3 py-1.5 sm:px-4 sm:py-2 lg:px-6 lg:py-3 flex items-center justify-center">
+      <span className="text-white text-sm sm:text-base lg:text-xl font-light leading-normal">{text}</span>
     </div>
   );
 }
 
 // Icon Components using PNG images
 const Icon = ({ src, alt }: { src: string; alt: string }) => (
-  <img src={src} alt={alt} className="w-[51px] h-[51px] object-contain" />
+  <img src={src} alt={alt} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-[51px] lg:h-[51px] object-contain" />
 );
 
 const HtmlIcon = () => <Icon src="/logo/html.png" alt="HTML" />;
@@ -444,6 +545,19 @@ const GitIcon = () => <Icon src="/logo/Git.png" alt="Git" />;
 const CssIcon = () => <Icon src="/logo/css-3.png" alt="CSS" />;
 const TailwindIcon = () => <Icon src="/logo/Tailwind CSS.png" alt="Tailwind CSS" />;
 const FigmaIconSvg = () => <Icon src="/logo/figma.png" alt="Figma" />;
+
+// New Icons for Machine Learning
+const TensorFlowIcon = () => <Icon src="/logo/icons8-tensorflow-48.png" alt="TensorFlow" />;
+const NumPyIcon = () => <Icon src="/logo/icons8-numpy-48.png" alt="NumPy" />;
+const PandasIcon = () => <Icon src="/logo/Pandas.png" alt="Pandas" />;
+const MatplotlibIcon = () => <Icon src="/logo/icons8-matplotlib-48.png" alt="Matplotlib" />;
+
+// New Icons for Mobile
+const FlutterIcon = () => <Icon src="/logo/flutter_icon_130936.png" alt="Flutter" />;
+const KotlinIcon = () => <Icon src="/logo/icons8-kotlin-48.png" alt="Kotlin" />;
+
+// Streamlit for Backend
+const StreamlitIcon = () => <Icon src="/logo/icons8-streamlit-48.png" alt="Streamlit" />;
 
 // SVG Icons for frameworks without PNG versions
 const ReactIcon = () => (
@@ -470,8 +584,218 @@ const ViteIcon = () => (
 
 const ExpressIcon = () => (
   <svg className="w-[60px] h-[60px] p-2" viewBox="0 0 60 60" fill="none">
-    <rect x="8" y="15" width="44" height="30" rx="2" fill="#68A063"/>
-    <rect x="18" y="10" width="24" height="5" fill="#68A063"/>
-    <rect x="18" y="45" width="24" height="5" fill="#68A063"/>
+    <rect x="8" y="15" width="44" height="30" rx="2" fill="#68A063" />
+    <rect x="18" y="10" width="24" height="5" fill="#68A063" />
+    <rect x="18" y="45" width="24" height="5" fill="#68A063" />
   </svg>
 );
+
+// Timeline Section Component
+function TimelineSection() {
+  const timelineData = [
+    {
+      title: "2026",
+      content: (
+        <div>
+          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Current year - Continuing professional growth
+          </p>
+          <div className="mb-8">
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <Rocket className="w-4 h-4 text-green-400" />
+              <span className="font-medium">Freelancer</span>
+              <span className="text-neutral-500">Ongoing</span>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2025",
+      content: (
+        <div>
+          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Advanced into professional development and specialized in AI/ML
+          </p>
+          <div className="mb-8">
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <GraduationCap className="w-4 h-4 text-cyan-400" />
+              <span className="font-medium">Passed Thesis - Smart Classroom</span>
+              <span className="text-neutral-500">Dec 2025</span>
+            </div>
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <Briefcase className="w-4 h-4 text-blue-400" />
+              <span className="font-medium">Full Stack Developer & ML Engineer Intern at Cawil.AI</span>
+              <span className="text-neutral-500">Jun 2025 - Aug 2025</span>
+            </div>
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <Code className="w-4 h-4 text-purple-400" />
+              <span>Computer Vision & NLP Development</span>
+            </div>
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <Code className="w-4 h-4 text-purple-400" />
+              <span>Created Automata Visualizer Tools</span>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src="/Thesis.png"
+              alt="Smart Classroom Thesis"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+            <img
+              src="/logomaker.jpg"
+              alt="Logo Maker AI"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+            <img
+              src="/SmartClassroom.jpg"
+              alt="Smart Classroom"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+            <img
+              src="/taghub.jpg"
+              alt="Taghub"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+            <img
+              src="/sntch.jpg"
+              alt="Sntch"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+            <img
+              src="/echocheck.png"
+              alt="Echocheck"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2024",
+      content: (
+        <div>
+          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Built major projects and learned Machine Learning
+          </p>
+          <div className="mb-8">
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <Code className="w-4 h-4 text-purple-400" />
+              <span>Developed Smart Classroom IoT System (Thesis)</span>
+            </div>
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <Code className="w-4 h-4 text-purple-400" />
+              <span>Built SmartWater IoT Project</span>
+            </div>
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <Code className="w-4 h-4 text-purple-400" />
+              <span>Learned Machine Learning fundamentals</span>
+            </div>
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <Rocket className="w-4 h-4 text-green-400" />
+              <span className="font-medium">Started Freelance Career</span>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src="/SmartWater.png"
+              alt="SmartWater"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+            <img
+              src="/TruthChain.png"
+              alt="Truth Chain"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2023",
+      content: (
+        <div>
+          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Focused on mastering programming fundamentals
+          </p>
+          <div className="mb-8">
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <Code className="w-4 h-4 text-purple-400" />
+              <span>Mastered Java & Python Programming (OOP)</span>
+            </div>
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <Code className="w-4 h-4 text-purple-400" />
+              <span>Learned HTML, CSS, JavaScript, React.js, Node.js, Express.js, MongoDB, and more</span>
+            </div>
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <Code className="w-4 h-4 text-purple-400" />
+              <span>UI/UX Design with Figma</span>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2022",
+      content: (
+        <div>
+          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-4">
+            Started my Computer Science journey at DLSUD
+          </p>
+          <div className="mb-8">
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <GraduationCap className="w-4 h-4 text-cyan-400" />
+              <span>Enrolled at De La Salle University - Dasmariñas</span>
+            </div>
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <Code className="w-4 h-4 text-purple-400" />
+              <span>Bachelor of Science in Computer Science</span>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src="/dlsudlogo.jfif"
+              alt="SmartWater"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2020",
+      content: (
+        <div>
+          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-4">
+            Computer Networking specialization
+          </p>
+          <div className="mb-8">
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <GraduationCap className="w-4 h-4 text-cyan-400" />
+              <span>Computer Networking Specialization</span>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2019",
+      content: (
+        <div>
+          <p className="text-neutral-200 text-xs md:text-sm font-normal mb-4">
+            Technical foundations in hardware
+          </p>
+          <div className="mb-8">
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <GraduationCap className="w-4 h-4 text-cyan-400" />
+              <span>Troubleshooting & Computer Hardware Specialization</span>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  return <Timeline data={timelineData} />;
+}
