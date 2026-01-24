@@ -34,9 +34,9 @@ const homeProjects = [
   },
   {
     id: 3,
-    title: "TagHub CRM",
+    title: "TagBase CRM",
     image: "/taghub.jpg",
-    demoLink: "https://taghub-app.netlify.app/",
+    demoLink: "https://tagbase.co/",
     repoLink: null,
     description: "A comprehensive CRM solution with advanced tagging system for contact management. Features customer journey visualization and analytics dashboards.",
     technologies: ["React", "TypeScript", "Convex", "TailwindCSS"],
