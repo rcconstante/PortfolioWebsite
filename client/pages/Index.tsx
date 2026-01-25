@@ -339,7 +339,7 @@ export default function Index() {
               </button>
             </div>
 
-            {/* Project 3 - TagHub CRM */}
+            {/* Project 3 - Tagbase CRM */}
             <div className="flex flex-col gap-6 md:gap-7">
               <div className="w-full h-auto rounded-[42px] overflow-hidden aspect-[807/470]">
                 <img src="/taghub.jpg" alt="TagHub CRM" className="w-full h-full object-cover" />
@@ -359,7 +359,7 @@ export default function Index() {
                   />
                 </svg>
                 <span className="font-inter font-normal text-[clamp(1.5rem,3vw,2.5rem)] text-black">
-                  TagHub CRM
+                  TagBase CRM
                 </span>
               </button>
             </div>
