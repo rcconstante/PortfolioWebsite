@@ -180,6 +180,46 @@ const projectsData = [
     description: "An environmental sustainability platform tracking carbon footprint and providing eco-friendly lifestyle recommendations.",
     technologies: ["React", "Node.js", "Data Visualization", "TailwindCSS"],
     status: "live"
+  },
+  {
+    id: 17,
+    title: "Alagacare",
+    image: "/Alagacare-front.png",
+    demoLink: "https://alagacare-app.netlify.app",
+    repoLink: null,
+    description: "A healthcare platform providing accessible medical services and care management for patients and providers.",
+    technologies: ["React", "TypeScript", "TailwindCSS", "Node.js"],
+    status: "live"
+  },
+  {
+    id: 18,
+    title: "Quicklobby",
+    image: "/Quicklobby.png",
+    demoLink: "https://quicklobby.app",
+    repoLink: null,
+    description: "A fast and intuitive lobby management platform enabling seamless coordination and real-time communication.",
+    technologies: ["React", "TypeScript", "TailwindCSS", "Node.js"],
+    status: "live"
+  },
+  {
+    id: 19,
+    title: "vbase.io",
+    image: "/vbase.png",
+    demoLink: "https://vbase.io",
+    repoLink: null,
+    description: "A modern vector database and knowledge base platform for storing, searching, and managing AI-ready data at scale.",
+    technologies: ["React", "TypeScript", "Vector DB", "Node.js"],
+    status: "live"
+  },
+  {
+    id: 20,
+    title: "Sendit - Mobile",
+    image: "/SSSX.png",
+    demoLink: "https://apps.apple.com/nz/app/sendit-driver/id6759831596",
+    repoLink: null,
+    description: "A mobile delivery driver app on the App Store, streamlining delivery management with real-time tracking and route optimization.",
+    technologies: ["React Native", "TypeScript", "iOS", "Maps API"],
+    status: "live"
   }
 ];
 

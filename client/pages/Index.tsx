@@ -14,12 +14,12 @@ import {
 const homeProjects = [
   {
     id: 1,
-    title: "Logo Maker AI",
-    image: "/logomaker.jpg",
-    demoLink: "https://logomaker-ai.com/",
+    title: "Alagacare",
+    image: "/Alagacare-front.png",
+    demoLink: "https://alagacare-app.netlify.app",
     repoLink: null,
-    description: "An AI-powered logo generation platform that creates professional, unique logos in seconds. Built with advanced machine learning models for creative design automation.",
-    technologies: ["React", "TypeScript", "Python", "TensorFlow", "Node.js"],
+    description: "A healthcare platform providing accessible medical services and care management for patients and providers.",
+    technologies: ["React", "TypeScript", "TailwindCSS", "Node.js"],
     status: "live"
   },
   {
@@ -289,10 +289,10 @@ export default function Index() {
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
-            {/* Project 1 - Logo Maker AI */}
+            {/* Project 1 - Alagacare */}
             <div className="flex flex-col gap-6 md:gap-7">
               <div className="w-full h-auto rounded-[42px] overflow-hidden aspect-[807/470]">
-                <img src="/logomaker.jpg" alt="Logo Maker AI" className="w-full h-full object-cover" />
+                <img src="/Alagacare-front.png" alt="Alagacare" className="w-full h-full object-cover" />
               </div>
               <button
                 onClick={() => setSelectedProject(homeProjects[0])}
@@ -309,7 +309,7 @@ export default function Index() {
                   />
                 </svg>
                 <span className="font-inter font-normal text-[clamp(1.5rem,3vw,2.5rem)] text-black">
-                  Logo Maker AI
+                  Alagacare
                 </span>
               </button>
             </div>

@@ -606,6 +606,35 @@ function TimelineSection() {
               <span className="font-medium">Freelancer</span>
               <span className="text-neutral-500">Ongoing</span>
             </div>
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <Rocket className="w-4 h-4 text-green-400" />
+              <span className="font-medium">Catered 10+ projects</span>
+            </div>
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <GraduationCap className="w-4 h-4 text-cyan-400" />
+              <span className="font-medium">Participated in AI Conference at De La Salle University Dasmariñas</span>
+            </div>
+            <div className="flex gap-2 items-center text-neutral-300 text-xs md:text-sm mb-2">
+              <Rocket className="w-4 h-4 text-pink-400" />
+              <span className="font-medium">Birthday: March 16 🎂</span>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <img
+              src="/CertificateRecog-conference.jpg"
+              alt="AI Conference Certificate"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+            <img
+              src="/SSSX.png"
+              alt="Sendit Mobile App"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+            <img
+              src="/vbase.png"
+              alt="vbase.io"
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
           </div>
         </div>
       ),
