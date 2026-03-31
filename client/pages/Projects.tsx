@@ -23,166 +23,6 @@ import {
 const projectsData = [
   {
     id: 1,
-    title: "Logo Maker AI",
-    image: "/logomaker.jpg",
-    demoLink: "https://logomaker-ai.com/",
-    repoLink: null, // Private
-    description: "An AI-powered logo generation platform that creates professional, unique logos in seconds. Built with advanced machine learning models for creative design automation.",
-    technologies: ["React", "TypeScript", "Python", "TensorFlow", "Node.js"],
-    status: "live"
-  },
-  {
-    id: 2,
-    title: "Ads Maker AI",
-    image: "/adsmaker.jpg",
-    demoLink: null, // In development
-    repoLink: null, // Private
-    description: "A sophisticated AI tool for creating compelling advertisement content automatically. Utilizes generative AI to produce marketing materials tailored to brand guidelines.",
-    technologies: ["React", "Python", "OpenAI", "Node.js", "PostgreSQL"],
-    status: "development"
-  },
-  {
-    id: 3,
-    title: "Echocheck",
-    image: "/echocheck.png",
-    demoLink: null, // In development
-    repoLink: null, // Private
-    description: "A health monitoring application that uses advanced audio analysis and machine learning to track and analyze respiratory patterns for early detection and health insights.",
-    technologies: ["React Native", "Python", "TensorFlow", "ONNX", "Node.js"],
-    status: "development"
-  },
-  {
-    id: 4,
-    title: "Truth Chain Social",
-    image: "/TruthChain.png",
-    demoLink: "https://truth-chain-social.netlify.app/",
-    repoLink: "https://github.com/rcconstante/Truth-Chain-Social-Demo",
-    description: "A blockchain-powered social media platform focused on authenticity and truth verification. Implements decentralized fact-checking mechanisms.",
-    technologies: ["React", "TypeScript", "Blockchain", "Node.js", "PostgreSQL"],
-    status: "live"
-  },
-  {
-    id: 5,
-    title: "TagBase CRM",
-    image: "/taghub.jpg",
-    demoLink: "https://tagbase.co",
-    repoLink: null, // Private
-    description: "A comprehensive CRM solution with advanced tagging system for contact management. Features customer journey visualization and analytics dashboards.",
-    technologies: ["React", "TypeScript", "Convex", "TailwindCSS"],
-    status: "live"
-  },
-  {
-    id: 6,
-    title: "AI Chat WorkSpace",
-    image: "/Ai.jpg",
-    demoLink: null, // In development
-    repoLink: null, // Private
-    description: "A collaborative AI-powered workspace that enables teams to interact with AI assistants for enhanced productivity and project management.",
-    technologies: ["React", "TypeScript", "OpenAI", "WebSockets", "Node.js"],
-    status: "development"
-  },
-  {
-    id: 7,
-    title: "Computer Vision",
-    image: "/CompVP.png",
-    demoLink: null,
-    repoLink: "https://github.com/rcconstante/ComputerVisionSummative",
-    description: "A comprehensive computer vision project implementing various image processing and object detection algorithms for real-world applications.",
-    technologies: ["Python", "OpenCV", "TensorFlow", "NumPy", "Matplotlib"],
-    status: "live"
-  },
-  {
-    id: 8,
-    title: "NeonBlitz",
-    image: "/NeonBlitz.png",
-    demoLink: "https://neonblitz.netlify.app/",
-    repoLink: "https://github.com/rcconstante/NeonBlitz",
-    description: "A fast-paced, visually stunning arcade game with neon aesthetics. Features smooth animations and engaging gameplay mechanics.",
-    technologies: ["JavaScript", "HTML5 Canvas", "CSS3", "Game Development"],
-    status: "live"
-  },
-  {
-    id: 9,
-    title: "RacerPH Website",
-    image: "/RacerPH.png",
-    demoLink: "https://racerph.netlify.app/",
-    repoLink: null, // Private
-    description: "A modern website for the Philippine racing community featuring event listings, driver profiles, and racing news.",
-    technologies: ["React", "TailwindCSS", "Netlify", "Responsive Design"],
-    status: "live"
-  },
-  {
-    id: 10,
-    title: "SmartWater",
-    image: "/SmartWater.png",
-    demoLink: null,
-    repoLink: "https://github.com/rcconstante/SmartWaterApp",
-    description: "An IoT-based smart water monitoring system that tracks water quality and consumption in real-time with alerts and analytics.",
-    technologies: ["HTML", "CSS", "JavaScript", "Python", "Flask", "Machine Learning"],
-    status: "live"
-  },
-  {
-    id: 11,
-    title: "Study Space",
-    image: "/StudySpace.png",
-    demoLink: null,
-    repoLink: "https://github.com/rcconstante/StudySpaceThesis",
-    description: "A thesis project focusing on creating an intelligent study environment with productivity tracking and adaptive learning recommendations.",
-    technologies: ["React Native", "Tailwind", "Machine Learning", "SQLite"],
-    status: "live"
-  },
-  {
-    id: 12,
-    title: "Text Safe",
-    image: "/TestSafe.png",
-    demoLink: null,
-    repoLink: "https://github.com/rcconstante/TextSafe",
-    description: "A text encryption and secure messaging application implementing advanced cryptographic algorithms for private communication.",
-    technologies: ["HTML", "CSS", "JavaScript", "Python", "Flask", "Machine Learning"],
-    status: "live"
-  },
-  {
-    id: 13,
-    title: "Automata Visualizer",
-    image: "/Automata.jpg",
-    demoLink: "https://automatavisualizer.netlify.app/",
-    repoLink: null, // Private
-    description: "An interactive educational tool for visualizing finite automata, helping students understand theoretical computer science concepts.",
-    technologies: ["React", "TypeScript", "D3.js", "TailwindCSS"],
-    status: "live"
-  },
-  {
-    id: 14,
-    title: "Sntch Ecommerce Website",
-    image: "/sntch.jpg",
-    demoLink: "https://sntchofficial.com/",
-    repoLink: null, // Private
-    description: "A fully-featured e-commerce platform with modern UI/UX, payment integration, and inventory management for a fashion brand.",
-    technologies: ["React", "Node.js", "Stripe", "PostgreSQL", "TailwindCSS"],
-    status: "live"
-  },
-  {
-    id: 15,
-    title: "DLSUD - Smart Classroom",
-    image: "/SmartClassroom.jpg",
-    demoLink: null,
-    repoLink: "https://github.com/rcconstante/SmartClassroomv2",
-    description: "An IoT-powered smart classroom system with real-time attendance tracking, environmental monitoring, and analytics dashboard.",
-    technologies: ["React", "Python", "IoT", "Machine Learning", "Firebase"],
-    status: "live"
-  },
-  {
-    id: 16,
-    title: "Ecoflow",
-    image: "/ecoflow.jpg",
-    demoLink: "https://ecoflowww.netlify.app/",
-    repoLink: "https://github.com/rcconstante/Computational-Science",
-    description: "An environmental sustainability platform tracking carbon footprint and providing eco-friendly lifestyle recommendations.",
-    technologies: ["React", "Node.js", "Data Visualization", "TailwindCSS"],
-    status: "live"
-  },
-  {
-    id: 17,
     title: "Alagacare",
     image: "/Alagacare-front.png",
     demoLink: "https://alagacare-app.netlify.app",
@@ -192,7 +32,7 @@ const projectsData = [
     status: "live"
   },
   {
-    id: 18,
+    id: 2,
     title: "Quicklobby",
     image: "/Quicklobby.png",
     demoLink: "https://quicklobby.app",
@@ -202,7 +42,7 @@ const projectsData = [
     status: "live"
   },
   {
-    id: 19,
+    id: 3,
     title: "vbase.io",
     image: "/vbase.png",
     demoLink: "https://vbase.io",
@@ -212,13 +52,173 @@ const projectsData = [
     status: "live"
   },
   {
-    id: 20,
+    id: 4,
     title: "Sendit - Mobile",
     image: "/SSSX.png",
     demoLink: "https://apps.apple.com/nz/app/sendit-driver/id6759831596",
     repoLink: null,
     description: "A mobile delivery driver app on the App Store, streamlining delivery management with real-time tracking and route optimization.",
     technologies: ["React Native", "TypeScript", "iOS", "Maps API"],
+    status: "live"
+  },
+  {
+    id: 5,
+    title: "TagBase CRM",
+    image: "/taghub.jpg",
+    demoLink: "https://tagbase.co",
+    repoLink: null,
+    description: "A comprehensive CRM solution with advanced tagging system for contact management. Features customer journey visualization and analytics dashboards.",
+    technologies: ["React", "TypeScript", "Convex", "TailwindCSS"],
+    status: "live"
+  },
+  {
+    id: 6,
+    title: "Sntch Ecommerce Website",
+    image: "/sntch.jpg",
+    demoLink: "https://sntchofficial.com/",
+    repoLink: null,
+    description: "A fully-featured e-commerce platform with modern UI/UX, payment integration, and inventory management for a fashion brand.",
+    technologies: ["React", "Node.js", "Stripe", "PostgreSQL", "TailwindCSS"],
+    status: "live"
+  },
+  {
+    id: 7,
+    title: "DLSUD - Smart Classroom",
+    image: "/SmartClassroom.jpg",
+    demoLink: null,
+    repoLink: "https://github.com/rcconstante/SmartClassroomv2",
+    description: "An IoT-powered smart classroom system with real-time attendance tracking, environmental monitoring, and analytics dashboard.",
+    technologies: ["React", "Python", "IoT", "Machine Learning", "Firebase"],
+    status: "live"
+  },
+  {
+    id: 8,
+    title: "Logo Maker AI",
+    image: "/logomaker.jpg",
+    demoLink: "https://logomaker-ai.com/",
+    repoLink: null,
+    description: "An AI-powered logo generation platform that creates professional, unique logos in seconds. Built with advanced machine learning models for creative design automation.",
+    technologies: ["React", "TypeScript", "Python", "TensorFlow", "Node.js"],
+    status: "live"
+  },
+  {
+    id: 9,
+    title: "Ads Maker AI",
+    image: "/adsmaker.jpg",
+    demoLink: null,
+    repoLink: null,
+    description: "A sophisticated AI tool for creating compelling advertisement content automatically. Utilizes generative AI to produce marketing materials tailored to brand guidelines.",
+    technologies: ["React", "Python", "OpenAI", "Node.js", "PostgreSQL"],
+    status: "development"
+  },
+  {
+    id: 10,
+    title: "AI Chat WorkSpace",
+    image: "/Ai.jpg",
+    demoLink: null,
+    repoLink: null,
+    description: "A collaborative AI-powered workspace that enables teams to interact with AI assistants for enhanced productivity and project management.",
+    technologies: ["React", "TypeScript", "OpenAI", "WebSockets", "Node.js"],
+    status: "development"
+  },
+  {
+    id: 11,
+    title: "Echocheck",
+    image: "/echocheck.png",
+    demoLink: null,
+    repoLink: null,
+    description: "A health monitoring application that uses advanced audio analysis and machine learning to track and analyze respiratory patterns for early detection and health insights.",
+    technologies: ["React Native", "Python", "TensorFlow", "ONNX", "Node.js"],
+    status: "development"
+  },
+  {
+    id: 12,
+    title: "Truth Chain Social",
+    image: "/TruthChain.png",
+    demoLink: "https://truth-chain-social.netlify.app/",
+    repoLink: "https://github.com/rcconstante/Truth-Chain-Social-Demo",
+    description: "A blockchain-powered social media platform focused on authenticity and truth verification. Implements decentralized fact-checking mechanisms.",
+    technologies: ["React", "TypeScript", "Blockchain", "Node.js", "PostgreSQL"],
+    status: "live"
+  },
+  {
+    id: 13,
+    title: "Automata Visualizer",
+    image: "/Automata.jpg",
+    demoLink: "https://automatavisualizer.netlify.app/",
+    repoLink: null,
+    description: "An interactive educational tool for visualizing finite automata, helping students understand theoretical computer science concepts.",
+    technologies: ["React", "TypeScript", "D3.js", "TailwindCSS"],
+    status: "live"
+  },
+  {
+    id: 14,
+    title: "RacerPH Website",
+    image: "/RacerPH.png",
+    demoLink: "https://racerph.netlify.app/",
+    repoLink: null,
+    description: "A modern website for the Philippine racing community featuring event listings, driver profiles, and racing news.",
+    technologies: ["React", "TailwindCSS", "Netlify", "Responsive Design"],
+    status: "live"
+  },
+  {
+    id: 15,
+    title: "Ecoflow",
+    image: "/ecoflow.jpg",
+    demoLink: "https://ecoflowww.netlify.app/",
+    repoLink: "https://github.com/rcconstante/Computational-Science",
+    description: "An environmental sustainability platform tracking carbon footprint and providing eco-friendly lifestyle recommendations.",
+    technologies: ["React", "Node.js", "Data Visualization", "TailwindCSS"],
+    status: "live"
+  },
+  {
+    id: 16,
+    title: "NeonBlitz",
+    image: "/NeonBlitz.png",
+    demoLink: "https://neonblitz.netlify.app/",
+    repoLink: "https://github.com/rcconstante/NeonBlitz",
+    description: "A fast-paced, visually stunning arcade game with neon aesthetics. Features smooth animations and engaging gameplay mechanics.",
+    technologies: ["JavaScript", "HTML5 Canvas", "CSS3", "Game Development"],
+    status: "live"
+  },
+  {
+    id: 17,
+    title: "Computer Vision",
+    image: "/CompVP.png",
+    demoLink: null,
+    repoLink: "https://github.com/rcconstante/ComputerVisionSummative",
+    description: "A comprehensive computer vision project implementing various image processing and object detection algorithms for real-world applications.",
+    technologies: ["Python", "OpenCV", "TensorFlow", "NumPy", "Matplotlib"],
+    status: "live"
+  },
+  {
+    id: 18,
+    title: "SmartWater",
+    image: "/SmartWater.png",
+    demoLink: null,
+    repoLink: "https://github.com/rcconstante/SmartWaterApp",
+    description: "An IoT-based smart water monitoring system that tracks water quality and consumption in real-time with alerts and analytics.",
+    technologies: ["HTML", "CSS", "JavaScript", "Python", "Flask", "Machine Learning"],
+    status: "live"
+  },
+  {
+    id: 19,
+    title: "Study Space",
+    image: "/StudySpace.png",
+    demoLink: null,
+    repoLink: "https://github.com/rcconstante/StudySpaceThesis",
+    description: "A thesis project focusing on creating an intelligent study environment with productivity tracking and adaptive learning recommendations.",
+    technologies: ["React Native", "Tailwind", "Machine Learning", "SQLite"],
+    status: "live"
+  },
+  {
+    id: 20,
+    title: "Text Safe",
+    image: "/TestSafe.png",
+    demoLink: null,
+    repoLink: "https://github.com/rcconstante/TextSafe",
+    description: "A text encryption and secure messaging application implementing advanced cryptographic algorithms for private communication.",
+    technologies: ["HTML", "CSS", "JavaScript", "Python", "Flask", "Machine Learning"],
     status: "live"
   }
 ];
