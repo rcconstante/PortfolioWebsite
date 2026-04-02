@@ -52,6 +52,16 @@ const projectsData = [
     status: "live"
   },
   {
+    id: 24,
+    title: "vbase Mobile",
+    image: "/vbase-mobile.png",
+    demoLink: null,
+    repoLink: null,
+    description: "The mobile companion app for vbase.io — a powerful vector database and knowledge base platform, bringing AI-ready data management to your fingertips.",
+    technologies: ["React Native", "TypeScript", "Vector DB", "Node.js"],
+    status: "development"
+  },
+  {
     id: 4,
     title: "Sendit - Mobile",
     image: "/SSSX.png",
@@ -60,6 +70,26 @@ const projectsData = [
     description: "A mobile delivery driver app on the App Store, streamlining delivery management with real-time tracking and route optimization.",
     technologies: ["React Native", "TypeScript", "iOS", "Maps API"],
     status: "live"
+  },
+  {
+    id: 22,
+    title: "Eyes Mobile",
+    image: "/eyes-mobile.png",
+    demoLink: null,
+    repoLink: null,
+    description: "AI-powered vision assistance web app that detects objects, distances, and obstacles around you in real-time using computer vision and machine learning.",
+    technologies: ["React", "Computer Vision", "Machine Learning"],
+    status: "development"
+  },
+  {
+    id: 23,
+    title: "Quest Mobile",
+    image: "/questing-mobile.png",
+    demoLink: null,
+    repoLink: null,
+    description: "A Flutter-based mobile app where users complete real-world quests and tasks to earn rewards, backed by a PostgreSQL database for robust data management.",
+    technologies: ["Flutter", "PostgreSQL"],
+    status: "development"
   },
   {
     id: 5,
@@ -230,26 +260,6 @@ const projectsData = [
     description: "A text encryption and secure messaging application implementing advanced cryptographic algorithms for private communication.",
     technologies: ["HTML", "CSS", "JavaScript", "Python", "Flask", "Machine Learning"],
     status: "live"
-  },
-  {
-    id: 22,
-    title: "Eyes Mobile",
-    image: "/eyes-mobile.png",
-    demoLink: null,
-    repoLink: null,
-    description: "A mobile-focused web application featuring computer vision and machine learning capabilities for visual recognition and analysis.",
-    technologies: ["React", "Computer Vision", "Machine Learning"],
-    status: "development"
-  },
-  {
-    id: 23,
-    title: "Quest Mobile",
-    image: "/questing-mobile.png",
-    demoLink: null,
-    repoLink: null,
-    description: "A cross-platform mobile application built with Flutter, featuring PostgreSQL database integration for seamless data management.",
-    technologies: ["Flutter", "PostgreSQL"],
-    status: "development"
   }
 ];
 
