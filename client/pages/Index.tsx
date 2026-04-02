@@ -24,12 +24,12 @@ const homeProjects = [
   },
   {
     id: 2,
-    title: "Ads Maker AI",
-    image: "/adsmaker.jpg",
+    title: "vbase Mobile",
+    image: "/vbase-mobile.png",
     demoLink: null,
     repoLink: null,
-    description: "A sophisticated AI tool for creating compelling advertisement content automatically. Utilizes generative AI to produce marketing materials tailored to brand guidelines.",
-    technologies: ["React", "Python", "OpenAI", "Node.js", "PostgreSQL"],
+    description: "The mobile companion app for vbase.io — a powerful vector database and knowledge base platform, bringing AI-ready data management to your fingertips.",
+    technologies: ["React Native", "TypeScript", "Vector DB", "Node.js"],
     status: "development"
   },
   {

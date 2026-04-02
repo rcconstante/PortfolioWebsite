@@ -72,6 +72,16 @@ const projectsData = [
     status: "live"
   },
   {
+    id: 21,
+    title: "Inventory System",
+    image: "/inventory-system.png",
+    demoLink: null,
+    repoLink: null,
+    description: "A web-based inventory management system for tracking and managing product stock, orders, and supply chain operations.",
+    technologies: ["PHP", "HTML", "CSS"],
+    status: "development"
+  },
+  {
     id: 6,
     title: "Sntch Ecommerce Website",
     image: "/sntch.jpg",
@@ -220,6 +230,26 @@ const projectsData = [
     description: "A text encryption and secure messaging application implementing advanced cryptographic algorithms for private communication.",
     technologies: ["HTML", "CSS", "JavaScript", "Python", "Flask", "Machine Learning"],
     status: "live"
+  },
+  {
+    id: 22,
+    title: "Eyes Mobile",
+    image: "/eyes-mobile.png",
+    demoLink: null,
+    repoLink: null,
+    description: "A mobile-focused web application featuring computer vision and machine learning capabilities for visual recognition and analysis.",
+    technologies: ["React", "Computer Vision", "Machine Learning"],
+    status: "development"
+  },
+  {
+    id: 23,
+    title: "Quest Mobile",
+    image: "/questing-mobile.png",
+    demoLink: null,
+    repoLink: null,
+    description: "A cross-platform mobile application built with Flutter, featuring PostgreSQL database integration for seamless data management.",
+    technologies: ["Flutter", "PostgreSQL"],
+    status: "development"
   }
 ];
 
