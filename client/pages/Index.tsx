@@ -314,10 +314,10 @@ export default function Index() {
               </button>
             </div>
 
-            {/* Project 2 - Ads Maker AI */}
+            {/* Project 2 - vbase Mobile */}
             <div className="flex flex-col gap-6 md:gap-7">
               <div className="w-full h-auto rounded-[42px] overflow-hidden aspect-[807/470]">
-                <img src="/adsmaker.jpg" alt="Ads Maker AI" className="w-full h-full object-cover" />
+                <img src="/vbase-mobile.png" alt="vbase Mobile" className="w-full h-full object-cover" />
               </div>
               <button
                 onClick={() => setSelectedProject(homeProjects[1])}
@@ -334,7 +334,7 @@ export default function Index() {
                   />
                 </svg>
                 <span className="font-inter font-normal text-[clamp(1.5rem,3vw,2.5rem)] text-black">
-                  Ads Maker AI
+                  vbase Mobile
                 </span>
               </button>
             </div>
