@@ -14,12 +14,12 @@ import {
 const homeProjects = [
   {
     id: 1,
-    title: "Alagacare",
-    image: "/Alagacare-front.png",
-    demoLink: "https://alagacare-app.netlify.app",
+    title: "Savit - Smart Bookmark Manager",
+    image: "/3.png",
+    demoLink: "https://apps.apple.com/us/app/savit-smart-bookmark-manager/id6763529989",
     repoLink: null,
-    description: "A healthcare platform providing accessible medical services and care management for patients and providers.",
-    technologies: ["React", "TypeScript", "TailwindCSS", "Node.js"],
+    description: "A React Native bookmark manager for saving, organizing, and revisiting links through a polished mobile-first experience.",
+    technologies: ["React Native", "TypeScript", "iOS", "Mobile UX"],
     status: "live"
   },
   {
@@ -289,10 +289,10 @@ export default function Index() {
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
-            {/* Project 1 - Alagacare */}
+            {/* Project 1 - Savit */}
             <div className="flex flex-col gap-6 md:gap-7">
               <div className="w-full h-auto rounded-[42px] overflow-hidden aspect-[807/470]">
-                <img src="/Alagacare-front.png" alt="Alagacare" className="w-full h-full object-cover" />
+                <img src="/3.png" alt="Savit - Smart Bookmark Manager" className="w-full h-full object-cover" />
               </div>
               <button
                 onClick={() => setSelectedProject(homeProjects[0])}
@@ -451,7 +451,7 @@ export default function Index() {
             </div>
           )}
         </div>
-      </section>
+                  Savit - Smart Bookmark Manager
 
       {/* Buy Me Coffee Section */}
       <section className="w-full px-4 md:px-8 lg:px-[133px] py-16 md:py-24 lg:py-[100px] bg-white">

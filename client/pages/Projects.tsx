@@ -23,13 +23,23 @@ import {
 const projectsData = [
   {
     id: 1,
-    title: "Alagacare",
-    image: "/Alagacare-front.png",
-    demoLink: "https://alagacare-app.netlify.app",
+    title: "Savit - Smart Bookmark Manager",
+    image: "/3.png",
+    demoLink: "https://apps.apple.com/us/app/savit-smart-bookmark-manager/id6763529989",
     repoLink: null,
-    description: "A healthcare platform providing accessible medical services and care management for patients and providers.",
-    technologies: ["React", "TypeScript", "TailwindCSS", "Node.js"],
+    description: "A React Native bookmark manager for saving, organizing, and revisiting links through a polished mobile-first experience.",
+    technologies: ["React Native", "TypeScript", "iOS", "Mobile UX"],
     status: "live"
+  },
+  {
+    id: 25,
+    title: "Kumpuni - Smart Guide",
+    image: "/4.png",
+    demoLink: null,
+    repoLink: null,
+    description: "A private React Native smart guide app built for a streamlined mobile guidance experience and contextual in-app navigation.",
+    technologies: ["React Native", "TypeScript", "Mobile UX", "App Navigation"],
+    status: "private"
   },
   {
     id: 2,
@@ -301,6 +311,11 @@ export default function Projects() {
                       <Clock className="w-4 h-4" />
                       In Development
                     </span>
+                  ) : selectedProject.status === "private" ? (
+                    <span className="inline-flex items-center gap-2 px-4 py-2 bg-slate-500/20 backdrop-blur-md border border-slate-400/30 rounded-full text-slate-200 text-sm font-medium">
+                      <Lock className="w-4 h-4" />
+                      Private / NDA
+                    </span>
                   ) : (
                     <span className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 backdrop-blur-md border border-emerald-500/30 rounded-full text-emerald-400 text-sm font-medium">
                       <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -351,6 +366,11 @@ export default function Projects() {
                       <ExternalLink className="w-5 h-5" />
                       View Live
                     </a>
+                  ) : selectedProject.status === "private" ? (
+                    <span className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-gray-300 rounded-full font-medium cursor-not-allowed">
+                      <Lock className="w-5 h-5" />
+                      Private / NDA
+                    </span>
                   ) : (
                     <span className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-gray-400 rounded-full font-medium cursor-not-allowed">
                       <Clock className="w-5 h-5" />
@@ -598,6 +618,14 @@ function ProjectCard({ title, image, status, onClick }: ProjectCardProps) {
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-amber-500/20 backdrop-blur-sm border border-amber-500/30 rounded-full text-amber-400 text-sm font-medium">
               <Clock className="w-3.5 h-3.5" />
               In Development
+            </span>
+          </div>
+        )}
+        {status === "private" && (
+          <div className="absolute top-4 right-4">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-500/20 backdrop-blur-sm border border-slate-400/30 rounded-full text-slate-200 text-sm font-medium">
+              <Lock className="w-3.5 h-3.5" />
+              Private / NDA
             </span>
           </div>
         )}
