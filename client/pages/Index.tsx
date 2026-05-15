@@ -309,7 +309,7 @@ export default function Index() {
                   />
                 </svg>
                 <span className="font-inter font-normal text-[clamp(1.5rem,3vw,2.5rem)] text-black">
-                  Alagacare
+                  Savit - Smart Bookmark Manager
                 </span>
               </button>
             </div>
@@ -451,7 +451,7 @@ export default function Index() {
             </div>
           )}
         </div>
-                  Savit - Smart Bookmark Manager
+      </section>
 
       {/* Buy Me Coffee Section */}
       <section className="w-full px-4 md:px-8 lg:px-[133px] py-16 md:py-24 lg:py-[100px] bg-white">
