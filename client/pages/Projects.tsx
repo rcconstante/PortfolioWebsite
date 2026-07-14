@@ -34,12 +34,32 @@ const projectsData = [
   {
     id: 25,
     title: "Kumpuni - Smart Guide",
-    image: "/4.png",
-    demoLink: null,
+    image: "/4.webp",
+    demoLink: "https://kumpuni.netlify.app/admin",
     repoLink: null,
-    description: "A private React Native smart guide app built for a streamlined mobile guidance experience and contextual in-app navigation.",
+    description: "A React Native smart guide app built for a streamlined mobile guidance experience and contextual in-app navigation.",
     technologies: ["React Native", "TypeScript", "Mobile UX", "App Navigation"],
-    status: "private"
+    status: "live"
+  },
+  {
+    id: 26,
+    title: "RedLove - Dating Platform",
+    image: "/redlove.webp",
+    demoLink: "https://redlove.today/",
+    repoLink: null,
+    description: "A modern dating platform designed to help people make meaningful connections through a warm, intuitive experience.",
+    technologies: ["React", "TypeScript", "TailwindCSS", "Web Platform"],
+    status: "live"
+  },
+  {
+    id: 27,
+    title: "DrivePH - LTO Driving Hub",
+    image: "/DrivePH.webp",
+    demoLink: "https://driveph.rcconstante.dev/",
+    repoLink: null,
+    description: "A practical LTO driving hub that brings driving resources, guides, and essential information together in one accessible platform.",
+    technologies: ["React", "TypeScript", "TailwindCSS", "Web Platform"],
+    status: "live"
   },
   {
     id: 2,
