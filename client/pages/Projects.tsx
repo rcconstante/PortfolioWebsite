@@ -55,7 +55,7 @@ const projectsData = [
     id: 27,
     title: "DrivePH - LTO Driving Hub",
     image: "/DrivePH.webp",
-    demoLink: "https://driveph.rcconstante.dev/",
+    demoLink: "https://apps.apple.com/ie/app/drive-ph-guide/id6787468109",
     repoLink: null,
     description: "A practical LTO driving hub that brings driving resources, guides, and essential information together in one accessible platform.",
     technologies: ["React", "TypeScript", "TailwindCSS", "Web Platform"],
