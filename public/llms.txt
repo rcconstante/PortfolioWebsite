@@ -16,7 +16,8 @@ Portfolio showcasing 16+ innovative projects including:
 - Logo Maker AI (AI-powered logo generation)
 - Ads Maker AI (AI-driven advertisement creation)
 - TagHub CRM (Customer relationship management system)
-- AI Chat WorkSpace (AI-powered chat interface)
+- PatchPilot (API change intelligence and automated integration maintenance)
+- Terrio (field sales, route planning, and CRM platform)
 - Computer Vision projects
 - E-commerce solutions
 - Educational platforms

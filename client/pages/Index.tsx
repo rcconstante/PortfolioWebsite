@@ -13,9 +13,29 @@ import {
 // Project data for homepage
 const homeProjects = [
   {
+    id: 24,
+    title: "PatchPilot - API Change Intelligence",
+    image: "/patch-pilot.webp",
+    demoLink: "https://patch-pilot-web.vercel.app/",
+    repoLink: null,
+    description: "An API change intelligence platform that monitors third-party integrations, identifies impacted code, generates fixes, runs tests, and opens GitHub pull requests.",
+    technologies: ["TypeScript", "API Monitoring", "GitHub Integration", "Automation"],
+    status: "live"
+  },
+  {
+    id: 3,
+    title: "Terrio - Field Sales Platform",
+    image: "/terrio.webp",
+    demoLink: "https://terrio.de",
+    repoLink: null,
+    description: "A field sales platform combining map-based prospecting, optimized route planning, and CRM synchronization so teams spend more time selling.",
+    technologies: ["TypeScript", "CRM", "Route Optimization", "Maps"],
+    status: "live"
+  },
+  {
     id: 1,
     title: "Savit - Smart Bookmark Manager",
-    image: "/3.png",
+    image: "/3.webp",
     demoLink: "https://apps.apple.com/us/app/savit-smart-bookmark-manager/id6763529989",
     repoLink: null,
     description: "A React Native bookmark manager for saving, organizing, and revisiting links through a polished mobile-first experience.",
@@ -23,17 +43,7 @@ const homeProjects = [
     status: "live"
   },
   {
-    id: 2,
-    title: "vbase Mobile",
-    image: "/vbase-mobile.png",
-    demoLink: null,
-    repoLink: null,
-    description: "The mobile companion app for vbase.io — a powerful vector database and knowledge base platform, bringing AI-ready data management to your fingertips.",
-    technologies: ["React Native", "TypeScript", "Vector DB", "Node.js"],
-    status: "development"
-  },
-  {
-    id: 3,
+    id: 5,
     title: "TagBase CRM",
     image: "/taghub.jpg",
     demoLink: "https://tagbase.co/",
@@ -41,16 +51,6 @@ const homeProjects = [
     description: "A comprehensive CRM solution with advanced tagging system for contact management. Features customer journey visualization and analytics dashboards.",
     technologies: ["React", "TypeScript", "Convex", "TailwindCSS"],
     status: "live"
-  },
-  {
-    id: 4,
-    title: "AI Chat WorkSpace",
-    image: "/Ai.jpg",
-    demoLink: null,
-    repoLink: null,
-    description: "A collaborative AI-powered workspace that enables teams to interact with AI assistants for enhanced productivity and project management.",
-    technologies: ["React", "TypeScript", "OpenAI", "WebSockets", "Node.js"],
-    status: "development"
   }
 ];
 
@@ -168,7 +168,7 @@ export default function Index() {
       <section className="relative w-full h-screen max-h-[972px] flex flex-col items-center justify-center overflow-hidden">
         {/* Background Image */}
         <img
-          src="/picture1.png"
+          src="/picture1.webp"
           alt="Hero background"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -289,10 +289,10 @@ export default function Index() {
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
-            {/* Project 1 - Savit */}
+            {/* Project 1 - PatchPilot */}
             <div className="flex flex-col gap-6 md:gap-7">
               <div className="w-full h-auto rounded-[42px] overflow-hidden aspect-[807/470]">
-                <img src="/3.png" alt="Savit - Smart Bookmark Manager" className="w-full h-full object-cover" />
+                <img src="/patch-pilot.webp" alt="PatchPilot API change intelligence dashboard" className="w-full h-full object-cover" />
               </div>
               <button
                 onClick={() => setSelectedProject(homeProjects[0])}
@@ -309,15 +309,15 @@ export default function Index() {
                   />
                 </svg>
                 <span className="font-inter font-normal text-[clamp(1.5rem,3vw,2.5rem)] text-black">
-                  Savit - Smart Bookmark Manager
+                  PatchPilot - API Change Intelligence
                 </span>
               </button>
             </div>
 
-            {/* Project 2 - vbase Mobile */}
+            {/* Project 2 - Terrio */}
             <div className="flex flex-col gap-6 md:gap-7">
               <div className="w-full h-auto rounded-[42px] overflow-hidden aspect-[807/470]">
-                <img src="/vbase-mobile.png" alt="vbase Mobile" className="w-full h-full object-cover" />
+                <img src="/terrio.webp" alt="Terrio field sales platform" className="w-full h-full object-cover" />
               </div>
               <button
                 onClick={() => setSelectedProject(homeProjects[1])}
@@ -334,15 +334,15 @@ export default function Index() {
                   />
                 </svg>
                 <span className="font-inter font-normal text-[clamp(1.5rem,3vw,2.5rem)] text-black">
-                  vbase Mobile
+                  Terrio - Field Sales Platform
                 </span>
               </button>
             </div>
 
-            {/* Project 3 - Tagbase CRM */}
+            {/* Project 3 - Savit */}
             <div className="flex flex-col gap-6 md:gap-7">
               <div className="w-full h-auto rounded-[42px] overflow-hidden aspect-[807/470]">
-                <img src="/taghub.jpg" alt="TagHub CRM" className="w-full h-full object-cover" />
+                <img src="/3.webp" alt="Savit - Smart Bookmark Manager" className="w-full h-full object-cover" />
               </div>
               <button
                 onClick={() => setSelectedProject(homeProjects[2])}
@@ -359,15 +359,15 @@ export default function Index() {
                   />
                 </svg>
                 <span className="font-inter font-normal text-[clamp(1.5rem,3vw,2.5rem)] text-black">
-                  TagBase CRM
+                  Savit - Smart Bookmark Manager
                 </span>
               </button>
             </div>
 
-            {/* Project 4 - AI Chat WorkSpace */}
+            {/* Project 4 - TagBase CRM */}
             <div className="flex flex-col gap-6 md:gap-7">
               <div className="w-full h-auto rounded-[42px] overflow-hidden aspect-[807/470]">
-                <img src="/Ai.jpg" alt="AI Chat WorkSpace" className="w-full h-full object-cover" />
+                <img src="/taghub.jpg" alt="TagBase CRM" className="w-full h-full object-cover" />
               </div>
               <button
                 onClick={() => setSelectedProject(homeProjects[3])}
@@ -384,7 +384,7 @@ export default function Index() {
                   />
                 </svg>
                 <span className="font-inter font-normal text-[clamp(1.5rem,3vw,2.5rem)] text-black">
-                  AI Chat WorkSpace
+                  TagBase CRM
                 </span>
               </button>
             </div>
@@ -418,7 +418,7 @@ export default function Index() {
           {!showGame ? (
             <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-3xl overflow-hidden">
               <img
-                src="/Gamepreview.png"
+                src="/Gamepreview.webp"
                 alt="Game preview"
                 className="w-full h-full object-cover"
               />
@@ -481,7 +481,7 @@ export default function Index() {
           <div className="flex-shrink-0">
             <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 relative">
               <img
-                src="/coffee.png"
+                src="/coffee.webp"
                 alt="Buy me a coffee"
                 className="w-full h-full object-contain hover:scale-110 transition-transform duration-500"
               />

@@ -529,35 +529,35 @@ const Icon = ({ src, alt }: { src: string; alt: string }) => (
   <img src={src} alt={alt} className="w-8 h-8 sm:w-10 sm:h-10 lg:w-[51px] lg:h-[51px] object-contain" />
 );
 
-const HtmlIcon = () => <Icon src="/logo/html.png" alt="HTML" />;
-const JsIcon = () => <Icon src="/logo/js.png" alt="JavaScript" />;
-const TsIcon = () => <Icon src="/logo/typescript.png" alt="TypeScript" />;
-const NodeIcon = () => <Icon src="/logo/nodejs.png" alt="Node.js" />;
-const FlaskIcon = () => <Icon src="/logo/flask.png" alt="Flask" />;
-const DjangoIcon = () => <Icon src="/logo/django.png" alt="Django" />;
-const PythonIcon = () => <Icon src="/logo/python.png" alt="Python" />;
-const JavaIcon = () => <Icon src="/logo/java.png" alt="Java" />;
-const SQLiteIcon = () => <Icon src="/logo/SQlite.png" alt="SQLite" />;
-const MySQLIcon = () => <Icon src="/logo/mysql-database.png" alt="MySQL" />;
-const PostgresIcon = () => <Icon src="/logo/postgre.png" alt="PostgreSQL" />;
-const GithubIcon = () => <Icon src="/logo/github.png" alt="GitHub" />;
-const GitIcon = () => <Icon src="/logo/Git.png" alt="Git" />;
-const CssIcon = () => <Icon src="/logo/css-3.png" alt="CSS" />;
-const TailwindIcon = () => <Icon src="/logo/Tailwind CSS.png" alt="Tailwind CSS" />;
-const FigmaIconSvg = () => <Icon src="/logo/figma.png" alt="Figma" />;
+const HtmlIcon = () => <Icon src="/logo/html.webp" alt="HTML" />;
+const JsIcon = () => <Icon src="/logo/js.webp" alt="JavaScript" />;
+const TsIcon = () => <Icon src="/logo/typescript.webp" alt="TypeScript" />;
+const NodeIcon = () => <Icon src="/logo/nodejs.webp" alt="Node.js" />;
+const FlaskIcon = () => <Icon src="/logo/flask.webp" alt="Flask" />;
+const DjangoIcon = () => <Icon src="/logo/django.webp" alt="Django" />;
+const PythonIcon = () => <Icon src="/logo/python.webp" alt="Python" />;
+const JavaIcon = () => <Icon src="/logo/java.webp" alt="Java" />;
+const SQLiteIcon = () => <Icon src="/logo/SQlite.webp" alt="SQLite" />;
+const MySQLIcon = () => <Icon src="/logo/mysql-database.webp" alt="MySQL" />;
+const PostgresIcon = () => <Icon src="/logo/postgre.webp" alt="PostgreSQL" />;
+const GithubIcon = () => <Icon src="/logo/github.webp" alt="GitHub" />;
+const GitIcon = () => <Icon src="/logo/Git.webp" alt="Git" />;
+const CssIcon = () => <Icon src="/logo/css-3.webp" alt="CSS" />;
+const TailwindIcon = () => <Icon src="/logo/Tailwind CSS.webp" alt="Tailwind CSS" />;
+const FigmaIconSvg = () => <Icon src="/logo/figma.webp" alt="Figma" />;
 
 // New Icons for Machine Learning
-const TensorFlowIcon = () => <Icon src="/logo/icons8-tensorflow-48.png" alt="TensorFlow" />;
-const NumPyIcon = () => <Icon src="/logo/icons8-numpy-48.png" alt="NumPy" />;
-const PandasIcon = () => <Icon src="/logo/Pandas.png" alt="Pandas" />;
-const MatplotlibIcon = () => <Icon src="/logo/icons8-matplotlib-48.png" alt="Matplotlib" />;
+const TensorFlowIcon = () => <Icon src="/logo/icons8-tensorflow-48.webp" alt="TensorFlow" />;
+const NumPyIcon = () => <Icon src="/logo/icons8-numpy-48.webp" alt="NumPy" />;
+const PandasIcon = () => <Icon src="/logo/Pandas.webp" alt="Pandas" />;
+const MatplotlibIcon = () => <Icon src="/logo/icons8-matplotlib-48.webp" alt="Matplotlib" />;
 
 // New Icons for Mobile
-const FlutterIcon = () => <Icon src="/logo/flutter_icon_130936.png" alt="Flutter" />;
-const KotlinIcon = () => <Icon src="/logo/icons8-kotlin-48.png" alt="Kotlin" />;
+const FlutterIcon = () => <Icon src="/logo/flutter_icon_130936.webp" alt="Flutter" />;
+const KotlinIcon = () => <Icon src="/logo/icons8-kotlin-48.webp" alt="Kotlin" />;
 
 // Streamlit for Backend
-const StreamlitIcon = () => <Icon src="/logo/icons8-streamlit-48.png" alt="Streamlit" />;
+const StreamlitIcon = () => <Icon src="/logo/icons8-streamlit-48.webp" alt="Streamlit" />;
 
 // SVG Icons for frameworks without PNG versions
 const ReactIcon = () => (
@@ -626,13 +626,13 @@ function TimelineSection() {
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
             <img
-              src="/SSSX.png"
+              src="/SSSX.webp"
               alt="Sendit Mobile App"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
             <img
-              src="/vbase.png"
-              alt="vbase.io"
+              src="/terrio.webp"
+              alt="Terrio"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
           </div>
@@ -672,7 +672,7 @@ function TimelineSection() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="/Thesis.png"
+              src="/Thesis.webp"
               alt="Smart Classroom Thesis"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
@@ -697,7 +697,7 @@ function TimelineSection() {
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
             <img
-              src="/echocheck.png"
+              src="/echocheck.webp"
               alt="Echocheck"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
@@ -728,12 +728,12 @@ function TimelineSection() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="/SmartWater.png"
+              src="/SmartWater.webp"
               alt="SmartWater"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
             <img
-              src="/TruthChain.png"
+              src="/TruthChain.webp"
               alt="Truth Chain"
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />

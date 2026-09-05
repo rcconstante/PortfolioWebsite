@@ -22,9 +22,29 @@ import {
 // Project data with all information
 const projectsData = [
   {
+    id: 24,
+    title: "PatchPilot - API Change Intelligence",
+    image: "/patch-pilot.webp",
+    demoLink: "https://patch-pilot-web.vercel.app/",
+    repoLink: null,
+    description: "An API change intelligence platform that monitors third-party integrations, identifies impacted code, generates fixes, runs tests, and opens GitHub pull requests.",
+    technologies: ["TypeScript", "API Monitoring", "GitHub Integration", "Automation"],
+    status: "live"
+  },
+  {
+    id: 3,
+    title: "Terrio - Field Sales Platform",
+    image: "/terrio.webp",
+    demoLink: "https://terrio.de",
+    repoLink: null,
+    description: "A field sales platform combining map-based prospecting, optimized route planning, and CRM synchronization so teams spend more time selling.",
+    technologies: ["TypeScript", "CRM", "Route Optimization", "Maps"],
+    status: "live"
+  },
+  {
     id: 1,
     title: "Savit - Smart Bookmark Manager",
-    image: "/3.png",
+    image: "/3.webp",
     demoLink: "https://apps.apple.com/us/app/savit-smart-bookmark-manager/id6763529989",
     repoLink: null,
     description: "A React Native bookmark manager for saving, organizing, and revisiting links through a polished mobile-first experience.",
@@ -42,29 +62,9 @@ const projectsData = [
     status: "live"
   },
   {
-    id: 26,
-    title: "RedLove - Dating Platform",
-    image: "/redlove.webp",
-    demoLink: "https://redlove.today/",
-    repoLink: null,
-    description: "A modern dating platform designed to help people make meaningful connections through a warm, intuitive experience.",
-    technologies: ["React", "TypeScript", "TailwindCSS", "Web Platform"],
-    status: "live"
-  },
-  {
-    id: 27,
-    title: "DrivePH - LTO Driving Hub",
-    image: "/DrivePH.webp",
-    demoLink: "https://apps.apple.com/ie/app/drive-ph-guide/id6787468109",
-    repoLink: null,
-    description: "A practical LTO driving hub that brings driving resources, guides, and essential information together in one accessible platform.",
-    technologies: ["React", "TypeScript", "TailwindCSS", "Web Platform"],
-    status: "live"
-  },
-  {
     id: 2,
     title: "Quicklobby",
-    image: "/Quicklobby.png",
+    image: "/Quicklobby.webp",
     demoLink: "https://quicklobby.app",
     repoLink: null,
     description: "A fast and intuitive lobby management platform enabling seamless coordination and real-time communication.",
@@ -72,29 +72,9 @@ const projectsData = [
     status: "live"
   },
   {
-    id: 3,
-    title: "vbase.io",
-    image: "/vbase.png",
-    demoLink: "https://vbase.io",
-    repoLink: null,
-    description: "A modern vector database and knowledge base platform for storing, searching, and managing AI-ready data at scale.",
-    technologies: ["React", "TypeScript", "Vector DB", "Node.js"],
-    status: "live"
-  },
-  {
-    id: 24,
-    title: "vbase Mobile",
-    image: "/vbase-mobile.png",
-    demoLink: null,
-    repoLink: null,
-    description: "The mobile companion app for vbase.io — a powerful vector database and knowledge base platform, bringing AI-ready data management to your fingertips.",
-    technologies: ["React Native", "TypeScript", "Vector DB", "Node.js"],
-    status: "development"
-  },
-  {
     id: 4,
     title: "Sendit - Mobile",
-    image: "/SSSX.png",
+    image: "/SSSX.webp",
     demoLink: "https://apps.apple.com/nz/app/sendit-driver/id6759831596",
     repoLink: null,
     description: "A mobile delivery driver app on the App Store, streamlining delivery management with real-time tracking and route optimization.",
@@ -104,7 +84,7 @@ const projectsData = [
   {
     id: 22,
     title: "Eyes Mobile",
-    image: "/eyes-mobile.png",
+    image: "/eyes-mobile.webp",
     demoLink: null,
     repoLink: null,
     description: "AI-powered vision assistance web app that detects objects, distances, and obstacles around you in real-time using computer vision and machine learning.",
@@ -114,7 +94,7 @@ const projectsData = [
   {
     id: 23,
     title: "Quest Mobile",
-    image: "/questing-mobile.png",
+    image: "/questing-mobile.webp",
     demoLink: null,
     repoLink: null,
     description: "A Flutter-based mobile app where users complete real-world quests and tasks to earn rewards, backed by a PostgreSQL database for robust data management.",
@@ -134,7 +114,7 @@ const projectsData = [
   {
     id: 21,
     title: "Inventory System",
-    image: "/inventory-system.png",
+    image: "/inventory-system.webp",
     demoLink: null,
     repoLink: null,
     description: "A web-based inventory management system for tracking and managing product stock, orders, and supply chain operations.",
@@ -182,19 +162,9 @@ const projectsData = [
     status: "development"
   },
   {
-    id: 10,
-    title: "AI Chat WorkSpace",
-    image: "/Ai.jpg",
-    demoLink: null,
-    repoLink: null,
-    description: "A collaborative AI-powered workspace that enables teams to interact with AI assistants for enhanced productivity and project management.",
-    technologies: ["React", "TypeScript", "OpenAI", "WebSockets", "Node.js"],
-    status: "development"
-  },
-  {
     id: 11,
     title: "Echocheck",
-    image: "/echocheck.png",
+    image: "/echocheck.webp",
     demoLink: null,
     repoLink: null,
     description: "A health monitoring application that uses advanced audio analysis and machine learning to track and analyze respiratory patterns for early detection and health insights.",
@@ -204,7 +174,7 @@ const projectsData = [
   {
     id: 12,
     title: "Truth Chain Social",
-    image: "/TruthChain.png",
+    image: "/TruthChain.webp",
     demoLink: "https://truth-chain-social.netlify.app/",
     repoLink: "https://github.com/rcconstante/Truth-Chain-Social-Demo",
     description: "A blockchain-powered social media platform focused on authenticity and truth verification. Implements decentralized fact-checking mechanisms.",
@@ -224,7 +194,7 @@ const projectsData = [
   {
     id: 14,
     title: "RacerPH Website",
-    image: "/RacerPH.png",
+    image: "/RacerPH.webp",
     demoLink: "https://racerph.netlify.app/",
     repoLink: null,
     description: "A modern website for the Philippine racing community featuring event listings, driver profiles, and racing news.",
@@ -244,7 +214,7 @@ const projectsData = [
   {
     id: 16,
     title: "NeonBlitz",
-    image: "/NeonBlitz.png",
+    image: "/NeonBlitz.webp",
     demoLink: "https://neonblitz.netlify.app/",
     repoLink: "https://github.com/rcconstante/NeonBlitz",
     description: "A fast-paced, visually stunning arcade game with neon aesthetics. Features smooth animations and engaging gameplay mechanics.",
@@ -254,7 +224,7 @@ const projectsData = [
   {
     id: 17,
     title: "Computer Vision",
-    image: "/CompVP.png",
+    image: "/CompVP.webp",
     demoLink: null,
     repoLink: "https://github.com/rcconstante/ComputerVisionSummative",
     description: "A comprehensive computer vision project implementing various image processing and object detection algorithms for real-world applications.",
@@ -264,7 +234,7 @@ const projectsData = [
   {
     id: 18,
     title: "SmartWater",
-    image: "/SmartWater.png",
+    image: "/SmartWater.webp",
     demoLink: null,
     repoLink: "https://github.com/rcconstante/SmartWaterApp",
     description: "An IoT-based smart water monitoring system that tracks water quality and consumption in real-time with alerts and analytics.",
@@ -274,7 +244,7 @@ const projectsData = [
   {
     id: 19,
     title: "Study Space",
-    image: "/StudySpace.png",
+    image: "/StudySpace.webp",
     demoLink: null,
     repoLink: "https://github.com/rcconstante/StudySpaceThesis",
     description: "A thesis project focusing on creating an intelligent study environment with productivity tracking and adaptive learning recommendations.",
@@ -284,7 +254,7 @@ const projectsData = [
   {
     id: 20,
     title: "Text Safe",
-    image: "/TestSafe.png",
+    image: "/TestSafe.webp",
     demoLink: null,
     repoLink: "https://github.com/rcconstante/TextSafe",
     description: "A text encryption and secure messaging application implementing advanced cryptographic algorithms for private communication.",
